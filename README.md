@@ -156,5 +156,23 @@ $ git push
 
 La base est prète, c'est parti pour la réalisation.
 
+### Informations complémentaires
+
+**Photos et illustrations**
+
+- Toutes les photos d'illustrations proviennent du site https://unsplash.com/.
+- Les autres photos, plus personnelles, proviennent du site original.
+- Les icones proviennent du site https://fontawesome.com/.
+  
+**Polices d'écriture**
+
+- Police Ubuntu provenant de Google Fonts via le CDN:
+```css
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+```
+
+
+
+
 Démonstration:
 https://pantaflex44.github.io/studi-eval1-html-css-bootstrap/
