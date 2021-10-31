@@ -67,7 +67,7 @@ Pour cette évaluation, il m'est demandé de crééer la page d'accueil vitrine 
 
 Je n'effectuerai pas de maquettes, mais je vais m'inspirer des designs tendances en 2021. Un de mes référentiels pour l'occasion sera: https://99designs.fr/blog/tendances/tendances-en-design-web/ .
 
-Après avoir rangé les différents documents dans un dossier de sauvegarde, je créé un sous dossier qui contiendra le code source du future site Internet. Pour éditer les différents sources textuelles, j'utilise Visual Studio Code. Je développe sous Linux, distribution Xubuntu 20.04 LTS. Le test du rendu se fera sur Chromium et Firefox et leur console développeur respective. Pour cette évaluation, je ne me servirais pas du serveur web que j'ai installé sur mon ordinateur mais seulement du service Github Pages, permettant, par la même, un déploiement simple du projet.
+Après avoir rangé les différents documents dans un dossier de sauvegarde, je créé un sous dossier qui contiendra le code source du future site Internet. Pour éditer les différentes sources textuelles, j'utilise Visual Studio Code. Je développe sous Linux, distribution Xubuntu 20.04 LTS. Le test du rendu se fera sur Chromium et Firefox en complément de leur console développeur respective. Pour cette évaluation, je ne me servirai pas du serveur web que j'ai installé sur mon ordinateur mais seulement du service Github Pages, permettant, par la même, un déploiement simple du projet.
 
 Pour suivre, je créé différents fichiers et sous-dossiers servant de base au projet:
 - La page d'accueil *index.html*
@@ -111,9 +111,9 @@ Avant de procéder à la création d'un dépot Git et de publier pour la premiè
 </html>
 ```
 
-Comme on peut le remarquer, j'en ai profité pour ajouter les meta-tags sociaux, permettant de partager le site web sur les différents médias modernes. Pour éviter les doublons, je reconcilie ces meta-tags. J'y ajoute un titre (meta title), une description (meta description), des mots clefs (meta keywords) et diverses informations supplémentaires.
+Comme on peut le remarquer, j'en ai profité pour ajouter les meta-tags sociaux, permettant de partager le site web sur les différents médias modernes. Pour éviter les doublons, je reconcilie ces meta-tags. J'y ajoute un titre (meta title), une description (meta description), des mots clefs (meta keywords - bien que devenu presque inutile à ce jour) et diverses informations supplémentaires.
 
-Je créé ce fichier fichier README.md que je complèterai au fûr et à mesure du développement. Je créé par la même un fichier LICENSE.txt contenant la licence d'utilisation des sources. Ici sera employée la GNU GPL v3.
+Je créé ce fichier fichier README.md que je compléterai au fûr et à mesure du développement. Je créé par la même un fichier LICENSE.txt contenant la licence d'utilisation des sources. Ici sera employée la GNU GPL v3.
 
 Une fois ceci fait, j'ouvre mon terminal, et tape la commande:
 ```bash
@@ -126,10 +126,10 @@ Puis je viens lier mon dépot local à mon dépot précédement créé et config
 $ git remote add origin https://github.com/pantaflex44/studi-eval1-html-css-bootstrap.git
 ```
 
-Je renome la branche par défaut 'master' en 'dev':
+Je renome la branche par défaut 'master' en 'eval1':
 ```bash
-$ git branch --move master dev
-$ git push --set-upstream origin dev
+$ git branch --move master eval1
+$ git push --set-upstream origin eval1
 $ git push origin --delete master
 ```
 
@@ -145,10 +145,14 @@ $ git commit -m "First commit"
 
 Pour finir, je pousse ce premier commit sur le dépot Github:
 ```bash
-$ git push origin dev
+$ git push origin eval1
 ```
 
-Tout au long du développement, je continuerai à pousser les changements sur le dépot Github en utilisant les 3 dernières commandes citées ci-dessus.
+Tout au long du développement, je continuerai à pousser les changements sur le dépot Github en utilisant les 3 dernières commandes citées ci-dessus résumées comme suit:
+```bash
+$ git commit -am "Rapport des modifications"
+$ git push
+```
 
 La base est prète, c'est parti pour la réalisation.
 

@@ -15,3 +15,50 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+html, body {
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+    font-family: Ubuntu, sans-serif;
+}
+
+.navbar-toggler {
+    border: 0;
+}
+
+.header-bg {
+    background: url('../images/og.banner2.png') no-repeat center;
+    background-size: cover;
+}
+
+.banner3-bg {
+    background: linear-gradient(#212529, transparent), url('../images/og.banner3.png') no-repeat center;
+    background-size: cover;
+
+}
+
+.text-shadow-black {
+    text-shadow: 0px 0px 10px #000;
+}
+
+.photo1 {
+    background: url('../images/photo1-quibron-1-2021.jpg') no-repeat center;
+    background-size: cover;
+    height: 200px;
+}
+.photo2 {
+    background: url('../images/photo2-rando-surprise-1-2021.jpg') no-repeat center;
+    background-size: cover;
+    height: 200px;
+}
+.photo3 {
+    background: url('../images/photo3-champtonceaux-1-2020.jpg') no-repeat center;
+    background-size: cover;
+    height: 200px;
+}
