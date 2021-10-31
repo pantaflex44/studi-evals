@@ -65,7 +65,7 @@ Pour suivre, je créé différents fichiers et sous-dossiers servant de base au 
 - 1 sous-dossier *styles* qui contiendra le script CSS *main.css*, support des modifications visuelles personnelles
 - 1 sous dossier *images* qui contiendra l'ensemble des images du site web. Les images seront classées par leur nom respectif.
 
-Avant de procéder à la création d'un dépot Git et de publier pour la première fois sur Github, je complète le fichier HTML de la page d'accueil *index.html* avec la structure HTML5 de base, incluant la mise en place de Bootstrap via son CDN. Structure qui sera reprise pour l'ensemble des futures pages créées.
+Avant de procéder à la création d'un dépot Git et de publier pour la première fois sur Github, je complète le fichier HTML de la page d'accueil *index.html* avec la structure HTML5 de base, incluant la mise en place de *Bootstrap* via son CDN. Structure qui sera reprise pour l'ensemble des futures pages créées.
 
 ```html
 <!DOCTYPE html>
@@ -114,6 +114,18 @@ qui me permet d'initialiser un dépot Git.
 
 Puis je viens lier mon dépot local à mon dépot précédement créé et configuré sur Github:
 ```bash
-git remote add origin https://github.com/pantaflex44/studi-eval1-html-css-bootstrap.git
+$ git remote add origin https://github.com/pantaflex44/studi-eval1-html-css-bootstrap.git
 ```
 
+A suivre, j'ajoute les fichiers nouvellement créés à mon dépot locale:
+```bash
+$ git add .
+```
+Et le réalise mon premier commit en y ajoutant le premier message original:
+```bash
+$ git commit -m "First commit"
+```
+Pour finir, je pousse ce commit sur le dépot Github:
+```bash
+$ git push origin master
+```
