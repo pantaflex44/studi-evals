@@ -50,6 +50,11 @@ adaptable a tous les formats d'écran.
 
 **Description du projet**
 
+![https://pantaflex44.github.io/studi-eval1-html-css-bootstrap/](./images/og.banner2.png)
+
+Démonstration:
+https://pantaflex44.github.io/studi-eval1-html-css-bootstrap/
+
 Après avoir recherché la liste des associations rattachées à la ville de Couëron (44 - Loire Atlantique), j'ai choisi une qui se rapprochait d'un de mes centres d'intérets: *Marche randonnée couëronnaise*.
 Après de nouvelles recherches, cette association possède déja un site web mais au design plutôt ancien. Il m'a donc paru interressant pour eux, comme pour moi, de leur proposer ma contribution pour en réaliser un autre. Par respect pour leur travail, je reprends la structure et les informations de leur site existant, tout en essayant de *moderniser son aspect visuel et techinque*, en le rendant notamment, *mobile first*
 
@@ -117,6 +122,10 @@ Puis je viens lier mon dépot local à mon dépot précédement créé et config
 $ git remote add origin https://github.com/pantaflex44/studi-eval1-html-css-bootstrap.git
 ```
 
+Je renome la branche par défaut 'master' en 'dev':
+```bash
+$ git branch -M master dev
+```
 A suivre, j'ajoute les fichiers nouvellement créés à mon dépot locale:
 ```bash
 $ git add .
@@ -125,7 +134,13 @@ Et le réalise mon premier commit en y ajoutant le premier message original:
 ```bash
 $ git commit -m "First commit"
 ```
-Pour finir, je pousse ce commit sur le dépot Github:
+Pour finir, je pousse ce premier commit sur le dépot Github:
 ```bash
-$ git push origin master
+$ git push origin dev
 ```
+Tout au long du développement, je continuerai à pousser les changements sur le dépot Github en utilisant les 3 dernières commandes ci-dessus.
+
+C'est parti pour la réalisation.
+
+Démonstration:
+https://pantaflex44.github.io/studi-eval1-html-css-bootstrap/
