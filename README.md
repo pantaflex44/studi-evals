@@ -60,10 +60,14 @@ Après de nouvelles recherches, cette association possède déja un site web mai
 
 Pour commencer, j'ai navigué sur le site existant en prenant note de la structure et de l'organisation des informations. J'ai relevé les points que je pense importants, et les points que je pense à modifier.
 
+Site existant: http://couerando.free.fr/
+
 Une fois fait, je commence à réfléchir à l'aspect visuel que je souhaite donner à la future interface. Je me base sur le cachier des charges de l'évaluation d'entrainement, c'est à dire, l'utilisation des technologie HTML5 / CSS3 et le framework Bootstrap.
 Pour cette évaluation, il m'est demandé de crééer la page d'accueil vitrine de l'association, ainsi qu'une page regroupant les événements associés.
 
-Après avoir rangé les différents documents dans un dossier de sauvegarde, je créé un sous dossier qui contiendra le code source du future site Internet. Pour éditer les différents sources textuelles, j'utilise Visual Studio Code. Je développe sous Linux, distribution Xubuntu 20.04 LTS. Pour cette évaluation, je ne me servirais pas du serveur web que j'ai installé sur mon ordinateur mais seulement du service Github Pages, permettant, par la même, un déploiement simple du projet.
+Je n'effectuerai pas de maquettes, mais je vais m'inspirer des designs tendances en 2021. Un de mes référentiels pour l'occasion sera: https://99designs.fr/blog/tendances/tendances-en-design-web/ .
+
+Après avoir rangé les différents documents dans un dossier de sauvegarde, je créé un sous dossier qui contiendra le code source du future site Internet. Pour éditer les différents sources textuelles, j'utilise Visual Studio Code. Je développe sous Linux, distribution Xubuntu 20.04 LTS. Le test du rendu se fera sur Chromium et Firefox et leur console développeur respective. Pour cette évaluation, je ne me servirais pas du serveur web que j'ai installé sur mon ordinateur mais seulement du service Github Pages, permettant, par la même, un déploiement simple du projet.
 
 Pour suivre, je créé différents fichiers et sous-dossiers servant de base au projet:
 - La page d'accueil *index.html*
@@ -124,23 +128,29 @@ $ git remote add origin https://github.com/pantaflex44/studi-eval1-html-css-boot
 
 Je renome la branche par défaut 'master' en 'dev':
 ```bash
-$ git branch -M master dev
+$ git branch --move master dev
+$ git push --set-upstream origin dev
+$ git push origin --delete master
 ```
+
 A suivre, j'ajoute les fichiers nouvellement créés à mon dépot locale:
 ```bash
 $ git add .
 ```
-Et le réalise mon premier commit en y ajoutant le premier message original:
+
+Et le réalise mon premier commit en y ajoutant le premier message très original:
 ```bash
 $ git commit -m "First commit"
 ```
+
 Pour finir, je pousse ce premier commit sur le dépot Github:
 ```bash
 $ git push origin dev
 ```
-Tout au long du développement, je continuerai à pousser les changements sur le dépot Github en utilisant les 3 dernières commandes ci-dessus.
 
-C'est parti pour la réalisation.
+Tout au long du développement, je continuerai à pousser les changements sur le dépot Github en utilisant les 3 dernières commandes citées ci-dessus.
+
+La base est prète, c'est parti pour la réalisation.
 
 Démonstration:
 https://pantaflex44.github.io/studi-eval1-html-css-bootstrap/
