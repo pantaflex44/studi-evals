@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-language" content="fr-FR">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les événements - Association Marche randonnée couëronnaise</title>
+    <meta name="keywords" content="couëron,association,sport,marche,randonnée,nantes,métropole,découverte,forme">
+    <meta name="description" content="Liste des événements. Pratique de la randonnée pédestre et de la marche nordique.">
+    <meta name="author" content="Christophe LEMOINE <pantaflex@hotmail.fr>">
+
+    <meta property="og:site_name" content="Marche randonnée couëronnaise">
+    <meta property="og:title" content="Liste des événements. Association Marche randonnée couëronnaise">
+    <meta property="og:description" content="Pratique de la randonnée pédestre et de la marche nordique.">
+    <meta property="og:image" content="https://pantaflex44.github.io/studi-evals/images/og.banner4.png">
+    <meta property="og:url" content="https://pantaflex44.github.io/studi-evals/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:alt" content="Association Marche randonnée couëronnaise. Les événements.">
+
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="./styles/main.css" media="screen" rel="stylesheet">
+</head>
+<body class="container-xl bg-dark p-0">
+
+    <div>
+        <header class="d-flex flex-column justify-content-between cover bg header-events-bg">
+            <nav class="navbar navbar-expand-md navbar-light navbar-bg">
+                <div class="container-fluid align-items-center">
+                    <div class="collapse navbar-collapse" id="navbarMenu">
+                        <ul class="navbar-nav mt-md-1 gap-1 gap-sm-3">
+                            <li class="nav-item">
+                                <a class="nav-link fw-bold lead" href="./index.html" title="Page d'accueil"><i class="fad fa-shoe-prints text-center me-2"></i>Accueil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active fw-bold lead" aria-current="page" href="./events.html" title="Nos événements"><i class="fad fa-calendar-alt text-center me-2" style="width: 20px;"></i>Evénements</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a class="navbar-brand mt-1" href="https://pantaflex44.github.io/studi-evals/" title="Association Marche randonnée couëronnaise">
+                        <img src="./images/favicon-32x32.png" alt="" class="d-inline-block mb-1 text-shadow-black">
+                    </a>
+                    <button class="navbar-toggler fw-bold lead text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Naviguer">
+                        Menu <i class="fad fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+            <div class="m-3 m-sm-5">
+                <p class="display-1 fw-bold text-white text-shadow-black">Nos sorties et Evénements</p>
+                <p class="display-4 fw-bold text-white text-shadow-black">Randonnées et Marches nordiques</p>
+                <p class="lead fw-bold text-white text-shadow-black">Association Couëronnaise</p>
+            </div>
+        </header>
+
+        <main class="bg-light">
+             
+            <section>
+                <article>
+                    <div class="h4 bg-dark text-light py-4 px-4 px-sm-5 m-0"><i class="far fa-calendar-check me-3"></i>A ne pas manquer</div>
+                    <div id="carouselEvents" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselEvents" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Evénement 1"></button>
+                            <button type="button" data-bs-target="#carouselEvents" data-bs-slide-to="1" aria-label="Evénement 2"></button>
+                            <button type="button" data-bs-target="#carouselEvents" data-bs-slide-to="2" aria-label="Evénement 3"></button>
+                            <button type="button" data-bs-target="#carouselEvents" data-bs-slide-to="3" aria-label="Evénement 4"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="d-block w-100 cover bg photo-event photo-event4"></div>
+                                <div class="carousel-caption w-100 p-2 pb-5 carousel-bg" style="left: 0; right: 0; bottom: 0;">
+                                    <h5 class="text-shadow-black">Marchons contre le cancer</h5>
+                                    <p class="text-shadow-black">Marches au profit de la recherche contre le cancer.</p>
+                                    <p class="fw-bold text-shadow-black">3 avril 2022 - A partir du site de l'Erdurière, Couëron.</p>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="d-block w-100 cover bg photo-event photo-event1"></div>
+                                <div class="carousel-caption w-100 p-2 pb-5 carousel-bg" style="left: 0; right: 0; bottom: 0;">
+                                    <h5 class="text-shadow-black">Re-découvrir nos parcs et jardins</h5>
+                                    <p class="text-shadow-black">A travers une promenade organisée, venez profiter des parcs de notre région.</p>
+                                    <p class="fw-bold text-shadow-black">9 et 10 juillet 2022 - Départ 10h - Picnic prévu.</p>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="d-block w-100 cover bg photo-event photo-event2"></div>
+                                <div class="carousel-caption w-100 p-2 pb-5 carousel-bg" style="left: 0; right: 0; bottom: 0;">
+                                    <h5 class="text-shadow-black">Parcourir la forêt du Gavre</h5>
+                                    <p class="text-shadow-black">La fraicheur de la végétation pour une promenade innoubliable.</p>
+                                    <p class="fw-bold text-shadow-black">17 juillet 2022 - Départ 8h sur le parking de Super U</p>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="d-block w-100 cover bg photo-event photo-event3"></div>
+                                <div class="carousel-caption w-100 p-2 pb-5 carousel-bg" style="left: 0; right: 0; bottom: 0;">
+                                    <h5 class="text-shadow-black">Voyage annuel - Le Massif central</h5>
+                                    <p class="text-shadow-black">Voyage annuel organisé par l'association.</p>
+                                    <p class="fw-bold text-shadow-black">du 25 au 31 juillet 2022 - Nous contacter pour plus d'informations.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselEvents" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Précédent</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselEvents" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Suivant</span>
+                        </button>
+                    </div>
+                </article>
+            </section>
+
+            <div class="row m-0 g-0 bg-light text-dark justify-content-center align-items-stretch">
+                <aside class="col-12 col-md-4 text-light">
+
+                    <div class="h5 bg-dark text-light py-4 px-4 m-0"><i class="far fa-calendar-alt me-3"></i>Courant du mois</div>
+                    <div class="calendar bg-white text-dark">
+                        <div class="d-grid fr-7 text-center bg-dark text-light days">
+                            <div>Lu</div>
+                            <div>Ma</div>
+                            <div>Me</div>
+                            <div>Je</div>
+                            <div>Ve</div>
+                            <div>Sa</div>
+                            <div>Di</div>
+                        </div>
+                        <div class="d-grid fr-7 text-center date">
+                            <div class="text-light">27</div>
+                            <div class="text-light">28</div>
+                            <div class="text-light">29</div>
+                            <div class="text-light">30</div>
+                            <div>1</div>
+                            <div class="text-muted">2</div>
+                            <div class="text-muted">3</div>
+                        </div>
+                        <div class="d-grid fr-7 text-center date">
+                            <div>4</div>
+                            <div>5</div>
+                            <div class="fw-bold">6</div>
+                            <div>7</div>
+                            <div>8</div>
+                            <div class="event">9</div>
+                            <div class="event">10</div>
+                        </div>
+                        <div class="d-grid fr-7 text-center date">
+                            <div>11</div>
+                            <div>12</div>
+                            <div class="noway">13</div>
+                            <div>14</div>
+                            <div>15</div>
+                            <div class="text-muted">16</div>
+                            <div class="event">17</div>
+                        </div>
+                        <div class="d-grid fr-7 text-center date">
+                            <div>18</div>
+                            <div>19</div>
+                            <div>20</div>
+                            <div>21</div>
+                            <div>22</div>
+                            <div class="text-muted">23</div>
+                            <div class="text-muted">24</div>
+                        </div>
+                        <div class="d-grid fr-7 text-center date">
+                            <div class="event">25</div>
+                            <div class="event">26</div>
+                            <div class="event">27</div>
+                            <div class="event">28</div>
+                            <div class="event">29</div>
+                            <div class="event">30</div>
+                            <div class="event">31</div>
+                        </div>
+                        <div class="d-grid fr-6 text-center bg-dark text-light month">
+                            <div><i class="fad fa-chevron-left"></i></div>
+                            <div>juillet</div>
+                            <div><i class="fad fa-chevron-right"></i></div>
+                            <div><i class="fad fa-chevron-left"></i></div>
+                            <div>2021</div>
+                            <div><i class="fad fa-chevron-right"></i></div>
+                        </div>
+                    </div>
+
+                </aside>
+
+                <section class="col-12 col-md-8">
+
+                    <article>
+                        <div class="h5 bg-dark text-light py-4 px-4 m-0"><i class="fad fa-list-ul me-3"></i>Les événements</div>
+                        <div class="small m-0 p-2">
+                            <span class="ms-2">Trier par</span>
+                            <a href="#" class="ms-4"><i class="fad fa-sort-up me-2"></i>Date</a>
+                            <a href="#" class="ms-4">Type</a>
+                        </div>
+                        <div class="p-4">
+                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
+                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
+                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
+                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
+                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
+                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
+                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
+                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
+                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
+                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
+                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
+                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
+                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
+                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
+                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
+                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
+                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
+                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
+                        </div>
+                    </article>
+
+                </section>
+            </section>
+
+        </main>
+
+        <footer class="bg-dark text-white small p-4 p-sm-5" style="overflow-wrap: break-word;">
+            <div class="row gap-2 gap-sm-0 small">
+                <div class="col-12 col-sm-4">
+                    <p class="h6 fw-bold">Informations</p>
+                    <p>Association Loi 1901 enregistrée à la ville de Couëron (44220).</p>
+                    <p>La MRC est affiliée à la <a href="https://www.ffrandonnee.fr/" target="_blank" title="Fédération Française de Randonnée Pédestre">Fédération Française de Randonnée Pédestre</a></p>
+
+                    <p class="h6 fw-bold">Conseil d'administration</p>
+                    <p>
+                        <strong>Président</strong>: Gérard PINIER<br>
+                        <strong>Présidente adjointe</strong>: Françoise LE PORS<br>
+                        <strong>Secrétaire</strong>: Mano LE CORRE<br>
+                        <strong>Trésorière</strong>: Christiane COURTET<br>
+                        <strong>Membres</strong>: Odile DANIEL, Annick BRIAND, Pascal BARDET, Nelly NOGUES, Thierry HENRIO, Nicolas FORNO
+                    </p>
+                </div>
+                <div class="col-12 col-sm-4">
+                    <p class="h6 fw-bold">Commissions</p>
+                    <p>
+                        <strong>Intendance</strong>: Thierry HENRIO, Nicolas FORNO<br>
+                        <strong>Manifestations</strong>: Mano LE CORRE<br>
+                        <strong>Organisation de randonnées</strong>: Gérard PINIER<br>
+                        <strong>Communication</strong>: Pascal BARDET, Nelly NOGUES, Annick BRIAND<br>
+                        <strong>Technique</strong> (marche nordique):<br>
+                        - <strong>Référents</strong>: Françoise LE PORS, Pascal BARDET<br>
+                        - <strong>Initiatrices et initiateurs</strong>: Françoise LE PORS, Sylvie BLARD, Gérard PINIER, Rachel BOITELLE, Pascal BARDET, Valérie LE GAL<br>
+                        <strong>Technique</strong> (marche classique):<br>
+                        - <strong>Initiatrices et initiateurs</strong>: Pierre CAMUS, Jean Luc LEBOEUF, Gérard PINIER, Gilles COTTREAU, Annick BRIAND, Eric CHEVALIER, Marie-Claude VIROLEAU, Yves CLOUET
+                    </p>
+                </div>
+                <div class="col-12 col-sm-4">
+                    <p class="h6 fw-bold">Contacts</p>
+                    <p>
+                        Adresse email de l'association<br>
+                        <i class="fas fa-envelope-square me-2"></i><a href="mailto:marcherandonneecoueronnaise@gmail.com">marcherandonneecoueronnaise@gmail.com</a>
+                    </p>
+                    <p>
+                        Francoise Le Pors<br>
+                        <i class="fas fa-phone-square-alt me-2"></i><a href="tel:06 86 56 38 01">06 86 56 38 01</a><br>
+                        <i class="fas fa-envelope-square me-2"></i><a href="mailto:francoise.lepors@laposte.net">francoise.lepors@laposte.net</a>
+                    </p>
+
+                    <p class="h6 fw-bold">Nous retrouver sur les réseaux</p>
+                    <p>
+                        <span class="lead me-4"><a href="https://www.facebook.com" target="_blank" style="color: #3b5998;"><i class="fab fa-facebook-f"></i></a></span>
+                        <span class="lead me-4"><a href="https://www.twitter.com" target="_blank" style="color: #1DA1F2;"><i class="fab fa-twitter"></i></a></span>
+                        <span class="lead me-4"><a href="https://www.instagram.com" target="_blank" style="color: #C13584;"><i class="fab fa-instagram"></i></a></span>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
+
+<!--
+    Site web de l'association Marche randonnée couëronnaise
+    Copyright (C) 2021 Marche randonnée couëronnaise
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+-->

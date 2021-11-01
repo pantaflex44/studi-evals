@@ -45,14 +45,22 @@ h1, h2, h3, h4, h5, h6,
     border: 0;
 }
 
-.header-bg {
-    background: url('../images/og.banner2.png') no-repeat center;
+.bg {
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.cover {
     background-size: cover;
 }
 
+.header-bg {
+    background-image: url('../images/og.banner2.png');
+}
+.header-events-bg {
+    background-image: url('../images/og.banner4.png');
+}
 .banner3-bg {
-    background: linear-gradient(#212529, transparent), url('../images/og.banner3.png') no-repeat center;
-    background-size: cover;
+    background: linear-gradient(#212529, transparent), url('../images/og.banner3.png');
 }
 
 .text-shadow-black {
@@ -70,18 +78,98 @@ h1, h2, h3, h4, h5, h6,
     transform: scale(1.2);
 }
 
-.photo1 {
-    background: url('../images/photo1-quibron-1-2021.jpg') no-repeat center;
-    background-size: cover;
+.photo {
     height: 200px;
+}
+.photo1 {
+    background-image: url('../images/photo1-quibron-1-2021.jpg');
 }
 .photo2 {
-    background: url('../images/photo2-rando-surprise-1-2021.jpg') no-repeat center;
-    background-size: cover;
-    height: 200px;
+    background-image: url('../images/photo2-rando-surprise-1-2021.jpg');
 }
 .photo3 {
-    background: url('../images/photo3-champtonceaux-1-2020.jpg') no-repeat center;
-    background-size: cover;
-    height: 200px;
+    background-image: url('../images/photo3-champtonceaux-1-2020.jpg');
+}
+
+.carousel-bg {
+    background: #00000099;
+}
+
+.photo-event {
+    height: 300px;
+}
+.photo-event1 {
+    background-image: url('../images/event1.png');
+}
+.photo-event2 {
+    background-image: url('../images/event2.png');
+}
+.photo-event3 {
+    background-image: url('../images/event3.png');
+}
+.photo-event4 {
+    background-image: url('../images/event4.png');
+}
+
+.d-grid {
+    display: grid;
+}
+
+.fr-1 {
+    grid-template-columns: repeat(1, 1fr);
+}
+.fr-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+.fr-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+.fr-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+.fr-5 {
+    grid-template-columns: repeat(5, 1fr);
+}
+.fr-6 {
+    grid-template-columns: repeat(6, 1fr);
+}
+.fr-7 {
+    grid-template-columns: repeat(7, 1fr);
+}
+.fr-8 {
+    grid-template-columns: repeat(8, 1fr);
+}
+.fr-9 {
+    grid-template-columns: repeat(9, 1fr);
+}
+.fr-10 {
+    grid-template-columns: repeat(10, 1fr);
+}
+
+.calendar .days {
+    font-size: small;
+}
+.calendar .date:hover {
+    background-color: #f8f9fa;
+}
+.calendar .days div,
+.calendar .date div,
+.calendar .month div {
+    cursor: default;
+    padding: 0.5rem;
+}
+.calendar .date div:hover {
+    background-color: #dee2e6;
+}
+.calendar .date div.event {
+    color: #fff;
+    background-color: #198754;
+    cursor: pointer;
+    text-decoration: overline;
+}
+.calendar .date div.noway {
+    color: #ced4da;
+    background-color: inherit;
+    cursor: inherit;
+    text-decoration: line-through;
 }
