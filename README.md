@@ -50,10 +50,10 @@ adaptable a tous les formats d'écran.
 
 **Description du projet**
 
-![https://pantaflex44.github.io/studi-eval1-html-css-bootstrap/](./images/og.banner2.png)
+![https://pantaflex44.github.io/studi-evals/](./images/og.banner2.png)
 
 Démonstration:
-https://pantaflex44.github.io/studi-eval1-html-css-bootstrap/
+https://pantaflex44.github.io/studi-evals/
 
 Après avoir recherché la liste des associations rattachées à la ville de Couëron (44 - Loire Atlantique), j'ai choisi une qui se rapprochait d'un de mes centres d'intérets: *Marche randonnée couëronnaise*.
 Après de nouvelles recherches, cette association possède déja un site web mais au design plutôt ancien. Il m'a donc paru interressant pour eux, comme pour moi, de leur proposer ma contribution pour en réaliser un autre. Par respect pour leur travail, je reprends la structure et les informations de leur site existant, tout en essayant de *moderniser son aspect visuel et techinque*, en le rendant notamment, *mobile first*
@@ -92,8 +92,8 @@ Avant de procéder à la création d'un dépot Git et de publier pour la premiè
     <meta property="og:site_name" content="Marche randonnée couëronnaise">
     <meta property="og:title" content="Association Marche randonnée couëronnaise">
     <meta property="og:description" content="Pratique de la randonnée pédestre et de la marche nordique">
-    <meta property="og:image" content="https://pantaflex44.github.io/Studi-eval-1-HTML-CSS-Bootstrap/images/og.banner1.png">
-    <meta property="og:url" content="https://pantaflex44.github.io/Studi-eval-1-HTML-CSS-Bootstrap/">
+    <meta property="og:image" content="https://pantaflex44.github.io/studi-evals/images/og.banner1.png">
+    <meta property="og:url" content="https://pantaflex44.github.io/studi-evals/">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image:alt" content="Association Marche randonnée couëronnaise">
 
@@ -123,7 +123,7 @@ qui me permet d'initialiser un dépot Git.
 
 Puis je viens lier mon dépot local à mon dépot précédement créé et configuré sur Github:
 ```bash
-$ git remote add origin https://github.com/pantaflex44/studi-eval1-html-css-bootstrap.git
+$ git remote add origin https://github.com/pantaflex44/studi-evals.git
 ```
 
 Je renome la branche par défaut 'master' en 'eval1':
@@ -158,6 +158,14 @@ La base est prète, c'est parti pour la réalisation.
 
 ### Informations complémentaires
 
+**Code source**
+
+Pour cloner le dépot Github des différentes évaluations et suivre son évolution:
+```bash
+$ git clone https://github.com/pantaflex44/studi-evals.git studi_evals
+$ cd studi_evals
+```
+
 **Photos et illustrations**
 
 - Toutes les photos d'illustrations proviennent du site https://unsplash.com/.
@@ -175,4 +183,4 @@ La base est prète, c'est parti pour la réalisation.
 
 
 Démonstration:
-https://pantaflex44.github.io/studi-eval1-html-css-bootstrap/
+https://pantaflex44.github.io/studi-evals/

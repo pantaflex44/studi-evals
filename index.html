@@ -20,170 +20,196 @@
 
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
 
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="./styles/main.css" media="screen" rel="stylesheet">
 </head>
-<body class="container-lg bg-light p-0">    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+<body class="container-lg bg-light p-0">
 
-    
-    <header class="d-flex flex-column justify-content-between h-100 header-bg rounded-3">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-            <div class="container-fluid align-items-center">
-                <a class="navbar-brand mt-1" href="https://pantaflex44.github.io/studi-evals/" title="Association Marche randonnée couëronnaise">
-                    <img src="./images/favicon-32x32.png" alt="" class="d-inline-block mb-1">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Naviguer">
-                    Menu <i class="fad fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarMenu">
-                    <ul class="navbar-nav mt-md-1 gap-1 gap-sm-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./index.html" title="Page d'accueil"><i class="fad fa-shoe-prints text-center me-2"></i>Accueil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./events.html" title="Nos événements"><i class="fad fa-calendar-alt text-center me-2" style="width: 20px;"></i>Evénements</a>
-                        </li>
-                    </ul>
+    <div class="border border-top-0 border-bottom-0">
+        <header class="d-flex flex-column justify-content-between header-bg" style="height: 100vh;">
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+                <div class="container-fluid align-items-center">
+                    <a class="navbar-brand mt-1" href="https://pantaflex44.github.io/studi-evals/" title="Association Marche randonnée couëronnaise">
+                        <img src="./images/favicon-32x32.png" alt="" class="d-inline-block mb-1">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Naviguer">
+                        Menu <i class="fad fa-bars"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarMenu">
+                        <ul class="navbar-nav mt-md-1 gap-1 gap-sm-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="./index.html" title="Page d'accueil"><i class="fad fa-shoe-prints text-center me-2"></i>Accueil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./events.html" title="Nos événements"><i class="fad fa-calendar-alt text-center me-2" style="width: 20px;"></i>Evénements</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+            </nav>
+            <figure class="m-auto text-center text-white text-shadow-black w-50 d-none d-sm-block">
+                <blockquote class="blockquote">
+                    <p>Marcher de nos jours, et surtout de nos jours, ce n’est pas revenir aux temps néolithiques, mais bien plutôt être prophète.</p>
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                    <span class="text-white">de Jacques Lacarrière</span> <cite title="Chemin faisant">dans Chemin faisant</cite>
+                </figcaption>
+            </figure>
+            <div class="m-3 m-sm-5">
+                <p class="display-1 fw-bold text-white text-shadow-black">Randonnées et Marches nordiques</p>
+                <p class="lead fw-bold text-white text-shadow-black">Association Couëronnaise</p>
             </div>
-        </nav>
-        <figure class="m-auto text-center text-white text-shadow-black w-50 d-none d-sm-block">
-            <blockquote class="blockquote">
-                <p>Marcher de nos jours, et surtout de nos jours, ce n’est pas revenir aux temps néolithiques, mais bien plutôt être prophète.</p>
-            </blockquote>
-            <figcaption class="blockquote-footer">
-                <span class="text-white">de Jacques Lacarrière</span> <cite title="Chemin faisant">dans Chemin faisant</cite>
-            </figcaption>
-        </figure>
-        <div class="m-3 m-sm-5">
-            <p class="display-1 fw-bold text-white text-shadow-black">Randonnées et Marches nordiques</p>
-            <p class="lead fw-bold text-white text-shadow-black">Association Couëronnaise</p>
-        </div>
-    </header>
+        </header>
 
-    <main>
-        <section>
-            <article class="mt-4 mt-md-5 bg-light text-dark banner3-bg border rounded-3">
-                <h4 class="bg-dark text-light p-3 px-4 px-sm-5 m-0"><i class="fad fa-chalkboard me-3"></i>Présentation</h4>
-                <div class="row w-100 m-0">
-                    <div class="col-12 col-sm-4 photo1"></div>
-                    <div class="col-12 col-sm-4 photo2 d-none d-sm-block"></div>
-                    <div class="col-12 col-sm-4 photo3 d-none d-sm-block"></div>
-                </div>
-                <div class="py-5 px-4 px-sm-5 text-white" style="min-height: 300px;">
-                    <p class="display-6 text-shadow-black">
-                        Notre groupe totalisant 220 adhérents est composé de randonneurs d’aspirations diverses.
+        <main>
+            <section>            
+                <article class="bg-light text-dark banner3-bg">
+                    <h4 class="bg-dark text-light p-3 px-4 px-sm-5 m-0"><i class="fad fa-chalkboard me-3"></i>Présentation</h4>
+                    <div class="row w-100 m-0">
+                        <div class="col-12 col-sm-4 photo1"></div>
+                        <div class="col-12 col-sm-4 photo2 d-none d-sm-block"></div>
+                        <div class="col-12 col-sm-4 photo3 d-none d-sm-block"></div>
+                    </div>
+                    <div class="py-5 px-4 px-sm-5 text-white" style="min-height: 300px;">
+                        <p class="display-6 text-shadow-black">
+                            Notre groupe totalisant 220 adhérents est composé de randonneurs d’aspirations diverses.
+                        </p>
+                        <p class="lead text-shadow-black">
+                            C’est ainsi que nous proposons des entraînements en fonction des niveaux et des disponibilités de chacun. Vous pourrez découvrir dans le chapitre " Nos entraînements et sorties " les différents créneaux de marches.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="bg-light text-dark p-4">
+                    <div class="row w-100 m-0 justify-content-between align-items-center">
+                        <div class="col-12 col-sm-6 p-2 text-center">
+                            <a href="https://www.ville-coueron.fr/" target="_blank" title="Ville de Couëron">
+                                <img class="grayscale" style="max-width: 20rem; max-height: 8rem;" src="https://www.ville-coueron.fr/wp-content/themes/themeCoueron/img/logo/logo.svg" alt="Ville de Couëron">
+                            </a>
+                        </div>
+                        <div class="col-12 col-sm-6 p-2 text-center">
+                            <a href="https://www.ffrandonnee.fr/" target="_blank" title="Fédération Française de la Randonnée Pédestre">
+                                <img class="grayscale" style="max-width: 20rem; max-height: 8rem;" src="https://www.ffrandonnee.fr/Themes/TheThemeMachine/Styles/dist/images/logo/logo-ffr.svg" alt="Fédération Française de la Randonnée Pédestre">
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section>
+                <article class="bg-white text-dark">
+                    <h4 class="bg-dark text-light p-3 px-4 px-sm-5 m-0"><i class="fad fa-hiking me-3"></i>Entrainements et Sorties</h4>
+                    <div class="row g-0 m-0 px-0 justify-content-end align-items-stretch">
+                        
+                        <div class="col-12 col-md-6 col-lg-4 photo-zoom-block">
+                            <div class="card border-0 rounded-0 pb-3 h-100">
+                                <div class="photo-zoom-container">
+                                    <img src="./images/photo4-sarzeau-1-2014.jpg" class="card-img-top rounded-0 photo-zoom" alt="Sarzeau 2014">
+                                </div>
+                                
+                                <div class="card-body">
+                                    <h5 class="card-title">Marche classique</h5>
+                                    <p class="card-text mt-4">La marche sportive, aussi nommée marche rapide ou marche active, est un sport qui se pratique à un rythme plus soutenu que la marche pratiquée au quotidien. Il fait donc travailler le souffle, l’endurance et presque tous les muscles du corps. A l’inverse de la marche quotidienne, qui se pratique souvent de façon inconsciente, la marche sportive se pratique de façon volontaire et à un rythme accéléré.</p>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><strong>Mardi matin</strong>: Circuit de 11-12 Km ( allure 5,5 à 5,7 km/h ). Départ 9 h.</li>
+                                    <li class="list-group-item"><strong>Jeudi après-midi</strong>: Circuit de 10-11 Km à allure plus modérée ( 5 à 5,5 km/h). Départ 14 h.</li>
+                                    <li class="list-group-item"><strong>Samedi après-midi</strong>: Circuit de 11-12 Km ( allure 5,5 à 5,7 Km/h ). Départ 14 h 15 à partir de lieux différents.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-4 photo-zoom-block">
+                            <div class="card border-0 rounded-0 pb-3 h-100">
+                                <div class="photo-zoom-container">
+                                    <img src="./images/photo5-mn-1-2017.jpg" class="card-img-top rounded-0 photo-zoom" alt="MN 2017">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Marche nordique</h5>
+                                    <p class="card-text mt-4">Vous sentez l’envie de vous essayer à la marche nordique ? Cette activité sportive nécessite peu d’équipements. Une paire de bâtons, des chaussures marche nordique adaptées, des vêtements pour le sport et un petit sac à dos suffisent. Il ne vous reste plus qu’à vous équiper pour réaliser vos premiers entrainements marche nordique !</p>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><strong>Mercredi matin</strong>: Pour débutants et initiés. Départ 9 h 30.</li>
+                                    <li class="list-group-item"><strong>Jeudi matin</strong>: Pour les initiés, de 9 à 11 km. Départ 9 h 30.</li>
+                                    <li class="list-group-item"><strong>Dimanche matin</strong>: Pour débutants et initiés. 3 vitesses proposées, 5 km/h, 6 km/h, 7 km/h. Départ 9 h 30.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-4 photo-zoom-block">
+                            <div class="card border-0 rounded-0 pb-3 h-100">
+                                <div class="photo-zoom-container">
+                                    <img src="./images/photo6-marche-contre-le-cancer.jpg" class="card-img-top rounded-0 photo-zoom" alt="Marche contre le cancer">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Marche engagées</h5>
+                                    <p class="card-text mt-4">Venez participer à nos marches engagées pour soutenir différents événements.</p>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><strong>Marchons contre le cancer</strong>: 3 avril 2022.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </article>
+            </section>
+            
+        </main>
+
+        <footer class="bg-dark text-white small p-4 p-sm-5">
+            <div class="row gap-2 gap-sm-0 small">
+                <div class="col-12 col-sm-4">
+                    <p class="h6 fw-bold">Informations</p>
+                    <p>Association Loi 1901 enregistrée à la ville de Couëron (44220).</p>
+                    <p>La MRC est affiliée à la <a href="https://www.ffrandonnee.fr/" target="_blank" title="Fédération Française de Randonnée Pédestre">Fédération Française de Randonnée Pédestre</a></p>
+
+                    <p class="h6 fw-bold">Conseil d'administration</p>
+                    <p>
+                        <strong>Président</strong>: Gérard PINIER<br>
+                        <strong>Présidente adjointe</strong>: Françoise LE PORS<br>
+                        <strong>Secrétaire</strong>: Mano LE CORRE<br>
+                        <strong>Trésorière</strong>: Christiane COURTET<br>
+                        <strong>Membres</strong>: Odile DANIEL, Annick BRIAND, Pascal BARDET, Nelly NOGUES, Thierry HENRIO, Nicolas FORNO
                     </p>
-                    <p class="lead text-shadow-black">
-                        C’est ainsi que nous proposons des entraînements en fonction des niveaux et des disponibilités de chacun. Vous pourrez découvrir dans le chapitre " Nos entraînements et sorties " les différents créneaux de marches.
+                </div>
+                <div class="col-12 col-sm-4">
+                    <p class="h6 fw-bold">Commissions</p>
+                    <p>
+                        <strong>Intendance</strong>: Thierry HENRIO, Nicolas FORNO<br>
+                        <strong>Manifestations</strong>: Mano LE CORRE<br>
+                        <strong>Organisation de randonnées</strong>: Gérard PINIER<br>
+                        <strong>Communication</strong>: Pascal BARDET, Nelly NOGUES, Annick BRIAND<br>
+                        <strong>Technique</strong> (marche nordique):<br>
+                        - <strong>Référents</strong>: Françoise LE PORS, Pascal BARDET<br>
+                        - <strong>Initiatrices et initiateurs</strong>: Françoise LE PORS, Sylvie BLARD, Gérard PINIER, Rachel BOITELLE, Pascal BARDET, Valérie LE GAL<br>
+                        <strong>Technique</strong> (marche classique):<br>
+                        - <strong>Initiatrices et initiateurs</strong>: Pierre CAMUS, Jean Luc LEBOEUF, Gérard PINIER, Gilles COTTREAU, Annick BRIAND, Eric CHEVALIER, Marie-Claude VIROLEAU, Yves CLOUET
                     </p>
                 </div>
-            </article>
+                <div class="col-12 col-sm-4">
+                    <p class="h6 fw-bold">Contacts</p>
+                    <p>
+                        Adresse email de l'association<br>
+                        <i class="fas fa-envelope-square me-2"></i><a href="mailto:marcherandonneecoueronnaise@gmail.com">marcherandonneecoueronnaise@gmail.com</a>
+                    </p>
+                    <p>
+                        Francoise Le Pors<br>
+                        <i class="fas fa-phone-square-alt me-2"></i><a href="tel:06 86 56 38 01">06 86 56 38 01</a><br>
+                        <i class="fas fa-envelope-square me-2"></i><a href="mailto:francoise.lepors@laposte.net">francoise.lepors@laposte.net</a>
+                    </p>
 
-            <article class="mt-4 mt-md-5 bg-dark text-dark border rounded-3">
-                <h4 class="bg-dark text-light p-3 px-4 px-sm-5 m-0"><i class="fad fa-hiking me-3"></i>Entrainements et Sorties</h4>
-                <div class="row g-0 m-0 pt-2 px-0">
-                    
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card border-0 rounded-0 h-100">
-                            <img src="./images/photo4-sarzeau-1-2014.jpg" class="card-img-top rounded-0" alt="Sarzeau 2014">
-                            <div class="card-body">
-                                <h5 class="card-title">Marche classique</h5>
-                                <p class="card-text mt-4">La marche sportive, aussi nommée marche rapide ou marche active, est un sport qui se pratique à un rythme plus soutenu que la marche pratiquée au quotidien. Il fait donc travailler le souffle, l’endurance et presque tous les muscles du corps. A l’inverse de la marche quotidienne, qui se pratique souvent de façon inconsciente, la marche sportive se pratique de façon volontaire et à un rythme accéléré.</p>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><strong>Mardi matin</strong>: Circuit de 11-12 Km ( allure 5,5 à 5,7 km/h ). Départ 9 h.</li>
-                                <li class="list-group-item"><strong>Jeudi après-midi</strong>: Circuit de 10-11 Km à allure plus modérée ( 5 à 5,5 km/h). Départ 14 h.</li>
-                                <li class="list-group-item"><strong>Samedi après-midi</strong>: Circuit de 11-12 Km ( allure 5,5 à 5,7 Km/h ). Départ 14 h 15 à partir de lieux différents.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card border-0 rounded-0 h-100">
-                            <img src="./images/photo5-mn-1-2017.jpg" class="card-img-top rounded-0" alt="MN 2017">
-                            <div class="card-body">
-                                <h5 class="card-title">Marche nordique</h5>
-                                <p class="card-text mt-4">Vous sentez l’envie de vous essayer à la marche nordique ? Cette activité sportive nécessite peu d’équipements. Une paire de bâtons, des chaussures marche nordique adaptées, des vêtements pour le sport et un petit sac à dos suffisent. Il ne vous reste plus qu’à vous équiper pour réaliser vos premiers entrainements marche nordique !</p>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><strong>Mercredi matin</strong>: Pour débutants et initiés. Départ 9 h 30.</li>
-                                <li class="list-group-item"><strong>Jeudi matin</strong>: Pour les initiés, de 9 à 11 km. Départ 9 h 30.</li>
-                                <li class="list-group-item"><strong>Dimanche matin</strong>: Pour débutants et initiés. 3 vitesses proposées, 5 km/h, 6 km/h, 7 km/h. Départ 9 h 30.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-lg-4">
-                        <div class="card border-0 rounded-0 h-100">
-                            <img src="./images/photo6-marche-contre-le-cancer.jpg" class="card-img-top rounded-0" alt="Marche contre le cancer">
-                            <div class="card-body">
-                                <h5 class="card-title">Marche engagées</h5>
-                                <p class="card-text mt-4">Venez participer à nos marches engagées pour soutenir différents événements.</p>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><strong>Marchons contre le cancer</strong>: 3 avril 2022.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
+                    <p class="h6 fw-bold">Nous retrouver sur les réseaux</p>
+                    <p>
+                        <span class="lead me-4"><a href="https://www.facebook.com" target="_blank" style="color: #3b5998;"><i class="fab fa-facebook-f"></i></a></span>
+                        <span class="lead me-4"><a href="https://www.twitter.com" target="_blank" style="color: #1DA1F2;"><i class="fab fa-twitter"></i></a></span>
+                        <span class="lead me-4"><a href="https://www.instagram.com" target="_blank" style="color: #C13584;"><i class="fab fa-instagram"></i></a></span>
+                    </p>
                 </div>
-            </article>
-        </section>
-        
-    </main>
-
-    <footer class="mt-4 mt-md-5 bg-dark text-white small p-4 p-sm-5 rounded-3">
-        <div class="row gap-2 gap-sm-0 small">
-            <div class="col-12 col-sm-4">
-                <p class="h6 fw-bold">Informations</p>
-                <p>Association Loi 1901 enregistrée à la ville de Couëron (44220).</p>
-                <p>La MRC est affiliée à la <a href="https://www.ffrandonnee.fr/" target="_blank" title="Fédération Française de Randonnée Pédestre">Fédération Française de Randonnée Pédestre</a></p>
-
-                <p class="h6 fw-bold">Conseil d'administration</p>
-                <p>
-                    <strong>Président</strong>: Gérard PINIER<br>
-                    <strong>Présidente adjointe</strong>: Françoise LE PORS<br>
-                    <strong>Secrétaire</strong>: Mano LE CORRE<br>
-                    <strong>Trésorière</strong>: Christiane COURTET<br>
-                    <strong>Membres</strong>: Odile DANIEL, Annick BRIAND, Pascal BARDET, Nelly NOGUES, Thierry HENRIO, Nicolas FORNO
-                </p>
             </div>
-            <div class="col-12 col-sm-4">
-                <p class="h6 fw-bold">Commissions</p>
-                <p>
-                    <strong>Intendance</strong>: Thierry HENRIO, Nicolas FORNO<br>
-                    <strong>Manifestations</strong>: Mano LE CORRE<br>
-                    <strong>Organisation de randonnées</strong>: Gérard PINIER<br>
-                    <strong>Communication</strong>: Pascal BARDET, Nelly NOGUES, Annick BRIAND<br>
-                    <strong>Technique</strong> (marche nordique):<br>
-                    - <strong>Référents</strong>: Françoise LE PORS, Pascal BARDET<br>
-                    - <strong>Initiatrices et initiateurs</strong>: Françoise LE PORS, Sylvie BLARD, Gérard PINIER, Rachel BOITELLE, Pascal BARDET, Valérie LE GAL<br>
-                    <strong>Technique</strong> (marche classique):<br>
-                    - <strong>Initiatrices et initiateurs</strong>: Pierre CAMUS, Jean Luc LEBOEUF, Gérard PINIER, Gilles COTTREAU, Annick BRIAND, Eric CHEVALIER, Marie-Claude VIROLEAU, Yves CLOUET
-                </p>
-            </div>
-            <div class="col-12 col-sm-4">
-                <p class="h6 fw-bold">Contacts</p>
-                <p>
-                    Adresse email de l'association<br>
-                    <i class="fas fa-envelope-square me-2"></i><a href="mailto:marcherandonneecoueronnaise@gmail.com">marcherandonneecoueronnaise@gmail.com</a>
-                </p>
-                <p>
-                    Francoise Le Pors<br>
-                    <i class="fas fa-phone-square-alt me-2"></i><a href="tel:06 86 56 38 01">06 86 56 38 01</a><br>
-                    <i class="fas fa-envelope-square me-2"></i><a href="mailto:francoise.lepors@laposte.net">francoise.lepors@laposte.net</a>
-                </p>
-
-                <p class="h6 fw-bold">Nous retrouver sur les réseaux</p>
-                <p>
-                    <span class="lead me-4"><a href="https://www.facebook.com" target="_blank" style="color: #3b5998;"><i class="fab fa-facebook-f"></i></a></span>
-                    <span class="lead me-4"><a href="https://www.twitter.com" target="_blank" style="color: #1DA1F2;"><i class="fab fa-twitter"></i></a></span>
-                    <span class="lead me-4"><a href="https://www.instagram.com" target="_blank" style="color: #C13584;"><i class="fab fa-instagram"></i></a></span>
-                </p>
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

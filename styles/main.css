@@ -28,6 +28,16 @@ h1, h2, h3, h4, h5, h6,
     font-family: Ubuntu, sans-serif;
 }
 
+.grayscale {
+    filter: gray;
+    -webkit-filter: grayscale(100%);
+    transition: filter 0.25s;
+}
+.grayscale:hover {
+    filter: none;
+    -webkit-filter: none;
+}
+
 .navbar-toggler {
     border: 0;
 }
@@ -40,11 +50,21 @@ h1, h2, h3, h4, h5, h6,
 .banner3-bg {
     background: linear-gradient(#212529, transparent), url('../images/og.banner3.png') no-repeat center;
     background-size: cover;
-
 }
 
 .text-shadow-black {
     text-shadow: 0px 0px 10px #000;
+}
+
+.photo-zoom-container {
+    overflow: hidden;
+}
+.photo-zoom {
+    transform: scale(1.0);
+    transition: transform 0.25s;
+}
+.photo-zoom-block:hover .photo-zoom {
+    transform: scale(1.2);
 }
 
 .photo1 {
