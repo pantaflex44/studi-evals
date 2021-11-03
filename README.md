@@ -1,14 +1,12 @@
 # **Studi**
 ## Evaluation numéro 1
-
-<hr>
+<br>
 
 ### Créer un site web avec HTML, CSS et Bootstrap
 **Compétence visée**
 
 Réaliser une interface utilisateur web statique et adaptable
-
-<hr>
+<br>
 
 ### Contenu de l'évaluation
 
@@ -47,6 +45,9 @@ adaptable a tous les formats d'écran.
 <hr>
 
 ### Ma proposition
+#### <b><u>ATTENTION</u></b>: Site Internet Factice. Seulement proposé pour l'éxercice.
+<br><br>
+
 
 **Description du projet**
 
@@ -55,21 +56,21 @@ adaptable a tous les formats d'écran.
 Démonstration:
 https://pantaflex44.github.io/studi-evals/
 
-Après avoir recherché la liste des associations rattachées à la ville de Couëron (44 - Loire Atlantique), j'ai choisi une qui se rapprochait d'un de mes centres d'intérets: *Marche randonnée couëronnaise*.
-Après de nouvelles recherches, cette association possède déja un site web mais au design plutôt ancien. Il m'a donc paru interressant pour eux, comme pour moi, de leur proposer ma contribution pour en réaliser un autre. Par respect pour leur travail, je reprends la structure et les informations de leur site existant, tout en essayant de *moderniser son aspect visuel et techinque*, en le rendant notamment, *mobile first*
+Après avoir recherché la liste des associations rattachées à la ville de Couëron (44 - Loire Atlantique), j'ai choisi celle qui se rapprochait d'un de mes centres d'intérets: *Marche randonnée couëronnaise*.
+Après de nouvelles recherches, cette association possède déjà un site web mais au design plutôt ancien. Il m'a donc paru intéressant, pour eux comme pour moi, de leur proposer ma contribution pour en réaliser un autre. Par respect pour leur travail, je reprends la structure et les informations du site existant, tout en essayant de *moderniser son aspect visuel et technique*, en le rendant notamment, *mobile first*
 
-Pour commencer, j'ai navigué sur le site existant en prenant note de la structure et de l'organisation des informations. J'ai relevé les points que je pense importants, et les points que je pense à modifier.
+Pour commencer, j'ai navigué sur le site existant en prenant note de la structure et de l'organisation des informations. J'ai relevé les points que je pense importants, et les points que je pense modifier.
 
 Site existant: http://couerando.free.fr/
 
-Une fois fait, je commence à réfléchir à l'aspect visuel que je souhaite donner à la future interface. Je me base sur le cachier des charges de l'évaluation d'entrainement, c'est à dire, l'utilisation des technologie HTML5 / CSS3 et le framework Bootstrap.
-Pour cette évaluation, il m'est demandé de crééer la page d'accueil vitrine de l'association, ainsi qu'une page regroupant les événements associés.
+Une fois fait, je commence à réfléchir à l'aspect visuel que je souhaite donner à la future interface. Je me base sur le cahier des charges de l'évaluation d'entraînement, c'est à dire, l'utilisation des technologie HTML5 / CSS3 et le framework Bootstrap.
+Pour cette évaluation, il m'est demandé de créer la page d'accueil vitrine de l'association, ainsi qu'une page regroupant les événements associés.
 
-Je n'effectuerai pas de maquettes, mais je vais m'inspirer des designs tendances en 2021. Un de mes référentiels pour l'occasion sera: https://99designs.fr/blog/tendances/tendances-en-design-web/ .
+Je n'effectuerai pas de maquettes, mais je vais m'inspirer des designs tendance en 2021. Un de mes référentiels pour l'occasion sera: https://99designs.fr/blog/tendances/tendances-en-design-web/ .
 
-Après avoir rangé les différents documents dans un dossier de sauvegarde, je créé un sous dossier qui contiendra le code source du future site Internet. Pour éditer les différentes sources textuelles, j'utilise Visual Studio Code. Je développe sous Linux, distribution Xubuntu 20.04 LTS. Le test du rendu se fera sur Chromium et Firefox en complément de leur console développeur respective. Pour cette évaluation, je ne me servirai pas du serveur web que j'ai installé sur mon ordinateur mais seulement du service Github Pages, permettant, par la même, un déploiement simple du projet.
+Après avoir rangé les différents documents dans un dossier de sauvegarde, je crée un sous dossier qui contiendra le code source du future site Internet. Pour éditer les différentes sources textuelles, j'utilise Visual Studio Code. Je développe sous Linux, distribution Xubuntu 20.04 LTS. Le test du rendu se fera sur Chromium et Firefox en complément de leur console développeur respective. Pour cette évaluation, je ne me servirai pas du serveur web que j'ai installé sur mon ordinateur, mais seulement du service Github Pages, permettant, par là-même, un déploiement simple du projet.
 
-Pour suivre, je créé différents fichiers et sous-dossiers servant de base au projet:
+Pour suivre, je crée différents fichiers et sous-dossiers servant de base au projet:
 - La page d'accueil *index.html*
 - 1 sous-dossier *styles* qui contiendra le script CSS *main.css*, support des modifications visuelles personnelles
 - 1 sous dossier *images* qui contiendra l'ensemble des images du site web. Les images seront classées par leur nom respectif.
@@ -111,9 +112,9 @@ Avant de procéder à la création d'un dépot Git et de publier pour la premiè
 </html>
 ```
 
-Comme on peut le remarquer, j'en ai profité pour ajouter les meta-tags sociaux, permettant de partager le site web sur les différents médias modernes. Pour éviter les doublons, je reconcilie ces meta-tags. J'y ajoute un titre (meta title), une description (meta description), des mots clefs (meta keywords - bien que devenu presque inutile à ce jour) et diverses informations supplémentaires.
+Comme on peut le remarquer, j'ai ajouté les meta-tags sociaux, permettant de partager le site web sur les différents médias modernes. Pour éviter les doublons, je réconcilie ces meta-tags. J'y ajoute un titre (meta title), une description (meta description), des mots clefs (meta keywords - bien que devenu presque inutile à ce jour) et diverses informations supplémentaires.
 
-Je créé ce fichier fichier README.md que je compléterai au fûr et à mesure du développement. Je créé par la même un fichier LICENSE.txt contenant la licence d'utilisation des sources. Ici sera employée la GNU GPL v3.
+Je crée ce fichier fichier README.md que je compléterai au fûr et à mesure du développement. Je crée par la même un fichier LICENSE.txt contenant la licence d'utilisation des sources. Ici sera employée la GNU GPL v3.
 
 Une fois ceci fait, j'ouvre mon terminal, et tape la commande:
 ```bash
@@ -121,7 +122,7 @@ $ git init
 ```
 qui me permet d'initialiser un dépot Git.
 
-Puis je viens lier mon dépot local à mon dépot précédement créé et configuré sur Github:
+Puis je viens lier mon dépôt local à mon dépôt précédement créé et configuré sur Github:
 ```bash
 $ git remote add origin https://github.com/pantaflex44/studi-evals.git
 ```
@@ -133,7 +134,7 @@ $ git push --set-upstream origin eval1
 $ git push origin --delete master
 ```
 
-A suivre, j'ajoute les fichiers nouvellement créés à mon dépot locale:
+A suivre, j'ajoute les fichiers nouvellement créés à mon dépot local:
 ```bash
 $ git add .
 ```
@@ -143,18 +144,18 @@ Et le réalise mon premier commit en y ajoutant le premier message très origina
 $ git commit -m "First commit"
 ```
 
-Pour finir, je pousse ce premier commit sur le dépot Github:
+Pour finir, je pousse ce premier commit sur le dépôt Github:
 ```bash
 $ git push origin eval1
 ```
 
-Tout au long du développement, je continuerai à pousser les changements sur le dépot Github en utilisant les 3 dernières commandes citées ci-dessus résumées comme suit:
+Tout au long du développement, je continuerai à pousser les changements sur le dépot Github en utilisant les 3 dernières commandes citées ci-dessus et résumées comme suit:
 ```bash
 $ git commit -am "Rapport des modifications"
 $ git push
 ```
 
-La base est prète, c'est parti pour la réalisation.
+La base est prète pour commencer le travail.
 
 ### Informations complémentaires
 

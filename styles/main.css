@@ -28,6 +28,14 @@ h1, h2, h3, h4, h5, h6,
     font-family: Ubuntu, sans-serif;
 }
 
+h1 > a {
+    color: #212529;
+    text-decoration: none;
+}
+h1 > a:hover {
+    color: #198754;
+}
+
 .grayscale {
     filter: gray;
     -webkit-filter: grayscale(100%);
@@ -36,6 +44,20 @@ h1, h2, h3, h4, h5, h6,
 .grayscale:hover {
     filter: none;
     -webkit-filter: none;
+}
+
+.border-start-lg {
+    border-left: 0;
+}
+
+.border-end-dark-1 {
+    border-right: 1px solid #212529;
+}
+.border-end-dark-2 {
+    border-right: 2px solid #212529;
+}
+.border-end-dark-3 {
+    border-right: 3px solid #212529;
 }
 
 .navbar-bg {
@@ -150,13 +172,17 @@ h1, h2, h3, h4, h5, h6,
     font-size: small;
 }
 .calendar .date:hover {
-    background-color: #f8f9fa;
+    background-color: #fff;
+    border-radius: 0.5rem;
 }
 .calendar .days div,
 .calendar .date div,
 .calendar .month div {
     cursor: default;
-    padding: 0.5rem;
+    padding: 0.4rem;
+    margin: 0.1rem;
+    cursor: default;
+    border-radius: 0.5rem;
 }
 .calendar .date div:hover {
     background-color: #dee2e6;
@@ -165,11 +191,41 @@ h1, h2, h3, h4, h5, h6,
     color: #fff;
     background-color: #198754;
     cursor: pointer;
-    text-decoration: overline;
 }
 .calendar .date div.noway {
     color: #ced4da;
     background-color: inherit;
     cursor: inherit;
     text-decoration: line-through;
+}
+
+.list-group-item {
+    background-color: #f8f9fa;
+}
+.list-group-item:hover {
+    background-color: #fff;
+}
+
+.page-link,
+.page-link:hover {
+    color: #198754;
+}
+
+/* bootstrap until md */
+@media only screen and (max-width : 767px) {
+
+    .border-end-dark-1,
+    .border-end-dark-2,
+    .border-end-dark-3 {
+        border-right: 0px;
+    }
+
+}
+
+@media only screen and (min-width : 992px) {
+
+    .border-start-lg {
+        border-left: 1px solid #dee2e6;
+    }
+
 }

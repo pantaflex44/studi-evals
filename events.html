@@ -117,11 +117,11 @@
             </section>
 
             <div class="row m-0 g-0 bg-light text-dark justify-content-center align-items-stretch">
-                <aside class="col-12 col-md-4 text-light">
+                <aside class="col-12 col-md-4 pb-5 border-end-dark-1">
 
-                    <div class="h5 bg-dark text-light py-4 px-4 m-0"><i class="far fa-calendar-alt me-3"></i>Courant du mois</div>
-                    <div class="calendar bg-white text-dark">
-                        <div class="d-grid fr-7 text-center bg-dark text-light days">
+                    <div class="h5 py-4 px-4 m-0 bg-dark text-light"><i class="far fa-calendar-alt me-3"></i>Courant du mois</div>
+                    <div class="calendar p-0 py-3 px-lg-4">
+                        <div class="d-grid fr-7 text-center days">
                             <div>Lu</div>
                             <div>Ma</div>
                             <div>Me</div>
@@ -131,10 +131,10 @@
                             <div>Di</div>
                         </div>
                         <div class="d-grid fr-7 text-center date">
-                            <div class="text-light">27</div>
-                            <div class="text-light">28</div>
-                            <div class="text-light">29</div>
-                            <div class="text-light">30</div>
+                            <div class="text-white">27</div>
+                            <div class="text-white">28</div>
+                            <div class="text-white">29</div>
+                            <div class="text-white">30</div>
                             <div>1</div>
                             <div class="text-muted">2</div>
                             <div class="text-muted">3</div>
@@ -175,51 +175,245 @@
                             <div class="event">30</div>
                             <div class="event">31</div>
                         </div>
-                        <div class="d-grid fr-6 text-center bg-dark text-light month">
-                            <div><i class="fad fa-chevron-left"></i></div>
+                        <div class="d-grid fr-6 text-center bg-light month">
+                            <div><a class="text-dark" href="#"><i class="fad fa-chevron-left"></a></i></div>
                             <div>juillet</div>
-                            <div><i class="fad fa-chevron-right"></i></div>
-                            <div><i class="fad fa-chevron-left"></i></div>
+                            <div><a class="text-dark" href="#"><i class="fad fa-chevron-right"></i></a></div>
+                            <div><a class="text-dark" href="#"><i class="fad fa-chevron-left"></i></a></div>
                             <div>2021</div>
-                            <div><i class="fad fa-chevron-right"></i></div>
+                            <div><a class="text-dark" href="#"><i class="fad fa-chevron-right"></i></a></div>
                         </div>
                     </div>
 
+                    <div class="h5 py-4 px-4 m-0 d-none d-md-block bg-dark text-light"><i class="fad fa-stream me-3"></i>Catégories</div>
+                    <div class="list-group list-group-flush d-none d-md-block border-bottom">
+                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center ps-4 bg-white fw-bold">
+                            <span>Toutes</span>
+                            <span class="badge bg-success rounded-pill">30</span>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center ps-4">
+                            <span>Randonnées</span>
+                            <span class="badge bg-success rounded-pill">8</span>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center ps-4">
+                            <span>Marches traditionnelles</span>
+                            <span class="badge bg-success rounded-pill">15</span>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center ps-4">
+                            <span>Marches nordiques</span>
+                            <span class="badge bg-success rounded-pill">5</span>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center ps-4">
+                            <span>Marches engagées</span>
+                            <span class="badge bg-success rounded-pill">2</span>
+                        </a>
+                    </div>
+                    
+
                 </aside>
 
-                <section class="col-12 col-md-8">
+                <section class="col-12 col-md-8 bg-white">
 
-                    <article>
-                        <div class="h5 bg-dark text-light py-4 px-4 m-0"><i class="fad fa-list-ul me-3"></i>Les événements</div>
-                        <div class="small m-0 p-2">
-                            <span class="ms-2">Trier par</span>
-                            <a href="#" class="ms-4"><i class="fad fa-sort-up me-2"></i>Date</a>
-                            <a href="#" class="ms-4">Type</a>
+                    <div class="h5 py-4 px-4 m-0 bg-dark text-light"><i class="fad fa-list-ul me-3"></i>Les événements</div>
+                    <div class="dropdown w-100 px-4 d-block d-md-none small bg-white">
+                        <button class="btn bg-transparent dropdown-toggle w-100 text-start d-flex justify-content-start align-items-center" type="button" id="catDD" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="me-3">Toutes les catégories</span>
+                            <span class="badge bg-success rounded-pill me-3">30</span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="catDD">
+                            <li class="py-2 bg-light">
+                                <button class="dropdown-item d-flex justify-content-between align-items-center" type="button">
+                                    <span class="me-4">Toutes les catégories</span>
+                                    <span class="badge bg-success rounded-pill">30</span>
+                                </button>
+                            </li>
+                            <li class="py-2">
+                                <button class="dropdown-item d-flex justify-content-between align-items-center" type="button">
+                                    <span class="me-4">Randonnées</span>
+                                    <span class="badge bg-success rounded-pill">8</span>
+                                </button>
+                            </li>
+                            <li class="py-2">
+                                <button class="dropdown-item d-flex justify-content-between align-items-center" type="button">
+                                    <span class="me-4">Marches traditionnelles</span>
+                                    <span class="badge bg-success rounded-pill">15</span>
+                                </button>
+                            </li>
+                            <li class="py-2">
+                                <button class="dropdown-item d-flex justify-content-between align-items-center" type="button">
+                                    <span class="me-4">Marches nordiques</span>
+                                    <span class="badge bg-success rounded-pill">5</span>
+                                </button>
+                            </li>
+                            <li class="py-2">
+                                <button class="dropdown-item d-flex justify-content-between align-items-center" type="button">
+                                    <span class="me-4">Marches engagées</span>
+                                    <span class="badge bg-success rounded-pill">2</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="d-flex justify-content-between justify-content-md-end align-items-center w-100 px-4 px-md-2 small border-top border-bottom">
+                        <div class="dropdown">
+                            <button class="btn bg-transparent dropdown-toggle" type="button" id="catDD" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span>Dates décroissantes</span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="catDD">
+                                <li class="py-2">
+                                    <button class="dropdown-item" type="button">
+                                        <span class="me-4">Trie: Dates croissantes</span>
+                                    </button>
+                                </li>
+                                <li class="py-2 bg-light">
+                                    <button class="dropdown-item" type="button">
+                                        <span class="me-4">Trie: Dates décroissantes</span>
+                                    </button>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="p-4">
-                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
-                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
-                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
-                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
-                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
-                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
-                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
-                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
-                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
-                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
-                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
-                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
-                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
-                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
-                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
-                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
-                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
-                            <p>ssfs sd fsf qsdf qsfs sdqfsqdsqdf sdq sdfqsdfqs dsqf qsf </p>
-                        </div>
-                    </article>
+                    </div>
+
+                    <div class="p-4">
+            
+                        <article class="row justify-content-start align-items-stretch mb-5">
+                            <div class="col-12 col-lg-4 text-end">
+                                <div class="small px-2 d-flex flex-column flex-lg-column-reverse">
+                                    <img class="rounded-3 mb-3 mb-lg-0 mt-0 mt-lg-3 border" src="./images/levt1.jpg" alt="Voyage annuel - Le Massif central">
+                                    <div class="d-flex flex-row flex-lg-column align-items-end">
+                                        <div style="line-height: 1.5rem;">
+                                            <div class="d-inline-block text-secondary">lundi</div>
+                                            <div class="d-inline-block text-success fw-bold lead">25</div>
+                                        </div>
+                                        <div class="d-inline-block text-muted mx-2 mx-lg-0" style="line-height: 1.5rem;">au</div>
+                                        <div style="line-height: 1.5rem;">
+                                            <div class="d-inline-block text-secondary">dimanche</div>
+                                            <div class="d-inline-block text-success fw-bold lead">31</div>
+                                        </div>
+                                        <div class="d-inline-block ms-2 ms-lg-0" style="line-height: 1.5rem;">juillet 2022</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-8 px-4 border-start-lg mt-3 mt-lg-0">
+                                <h1>Voyage annuel - Le Massif central</h1>
+                                <h4 class="text-secondary">Voyage annuel organisé par l'association.</h4>
+                                <p class="lead mt-3">
+                                    Présentation.
+                                </p>
+                                <p>
+                                    Sources, rivières, parcs régionaux et nationaux, sont toutes les richesses de ce territoire. A pied, en vélo, en canoë, avec un âne, à ski ou en raquettes, les randonnées sont multiples pour un séjour chaleureux et ressourçant. Des Causses du Quercy aux volcans d’Auvergne, des Monts d’Ardèche aux Cévennes, du Pilat au Livradois-Forez, de Millevaches en Limousin au Haut-Languedoc, le Massif central est parfait pour un séjour bien-être ou une randonnée plus sportive. Les eaux thermales, la pureté de l'air et la diversité architecturale font également partie des nombreuses ressources qu'offre cette région aux marcheurs.
+                                </p>
+                                <p class="lead mt-3">
+                                    Informations.
+                                </p>
+                                <p>
+                                    <ul>
+                                        <li>Hébergement et repas inclus.</li>
+                                        <li>Participation supplémentaire de 75€ par personne.</li>
+                                        <li>Contacter Francoise Le Pors au 06 86 56 38 01</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="row justify-content-start align-items-stretch mb-5">
+                            <div class="col-12 col-lg-4 text-end">
+                                <div class="small px-2 d-flex flex-column flex-lg-column-reverse">
+                                    <img class="rounded-3 mb-3 mb-lg-0 mt-0 mt-lg-3 border" src="./images/levt2.jpg" alt="Parcourir la forêt du Gavre">
+                                    <div class="d-flex flex-row flex-lg-column align-items-end">
+                                        <div style="line-height: 1.5rem;">
+                                            <div class="d-inline-block text-secondary">dimanche</div>
+                                            <div class="d-inline-block text-success fw-bold lead">17</div>
+                                        </div>
+                                        <div class="d-inline-block ms-2 ms-lg-0" style="line-height: 1.5rem;">juillet 2022</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-8 px-4 border-start-lg mt-3 mt-lg-0">
+                                <h1>Parcourir la forêt du Gavre</h1>
+                                <h4 class="text-secondary">La fraicheur de la végétation pour une promenade innoubliable.</h4>
+                                <p class="lead mt-3">
+                                    Présentation.
+                                </p>
+                                <p>
+                                    Seule forêt domaniale de Loire Atlantique, la Forêt du Gâvre accueille le public tout au long de l'année. Pour découvrir les milieux forestiers et leurs différentes facettes, des équipements sont a votre disposition: sentiers de randonnée, sentier sportif, sentiers pédagogiques, kiosque, arboretum, ...
+                                </p>
+                                <p class="lead mt-3">
+                                    Informations.
+                                </p>
+                                <p>
+                                    <ul>
+                                        <li>Départ 8h sur le parking de Super U.</li>
+                                        <li>Contacter Francoise Le Pors au 06 86 56 38 01</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="row justify-content-start align-items-stretch mb-5">
+                            <div class="col-12 col-lg-4 text-end">
+                                <div class="small px-2 d-flex flex-column flex-lg-column-reverse">
+                                    <img class="rounded-3 mb-3 mb-lg-0 mt-0 mt-lg-3 border" src="./images/levt3.jpg" alt="Re-découvrir nos parcs et jardins">
+                                    <div class="d-flex flex-row flex-lg-column align-items-end">
+                                        <div style="line-height: 1.5rem;">
+                                            <div class="d-inline-block text-secondary">samedi</div>
+                                            <div class="d-inline-block text-success fw-bold lead">9</div>
+                                        </div>
+                                        <div class="d-inline-block text-muted mx-2 mx-lg-0" style="line-height: 1.5rem;">au</div>
+                                        <div style="line-height: 1.5rem;">
+                                            <div class="d-inline-block text-secondary">dimanche</div>
+                                            <div class="d-inline-block text-success fw-bold lead">10</div>
+                                        </div>
+                                        <div class="d-inline-block ms-2 ms-lg-0" style="line-height: 1.5rem;">juillet 2022</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-8 px-4 border-start-lg mt-3 mt-lg-0">
+                                <h1>Re-découvrir nos parcs et jardins</h1>
+                                <h4 class="text-secondary">A travers une promenade organisée, venez profiter des parcs de notre région.</h4>
+                                <p class="lead mt-3">
+                                    Présentation.
+                                </p>
+                                <p>
+                                    Les Parcs et Jardins de Loire-Atlantique vous accueillent. C’est le fruit de plus de 10 années de prospection, de rencontres et d’échanges qui va vous permettre des découvertes aussi insolites qu’inattendues. Ce parcours touristique longeant la Loire s’offre à vous et va se développer au fil du temps. Profitez bien de tous ces paysages chargés d’histoire et de passion.
+                                </p>
+                                <p class="lead mt-3">
+                                    Informations.
+                                </p>
+                                <p>
+                                    <ul>
+                                        <li>Départ 10h.</li>
+                                        <li>Picni prévu par l'association.</li>
+                                        <li>Contacter Francoise Le Pors au 06 86 56 38 01</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </article>
+
+                        <nav aria-label="Navigation">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" aria-label="Précédent">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link bg-success text-white" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Suivant">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                    </div>
+
+                    
 
                 </section>
-            </section>
+            </div>
 
         </main>
 
