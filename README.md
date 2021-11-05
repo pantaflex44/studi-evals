@@ -180,8 +180,41 @@ $ cd studi_evals
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 ```
 
+### Correction du formateur Studi le 5 novembre 2021
 
+**Dossier et Correction**
 
+[Cliquer pour télécharger](dossier-et-correction.pdf)
 
-Démonstration:
-https://pantaflex44.github.io/studi-evals/
+**Notes**
+
+1. Interface utilisateur claire et bien pensée (4 points). 3
+2. Structure sémantique html et utilisation des méta pour optimiser le référencement (4 points). 3
+3. Intégration mobile first (4 points).4
+4. Utilisation de git / branch / commit réguliers avec des message clairs et concis (5 points) 5
+5. Déploiement de la réalisation en ligne (3 points) 3
+
+- *<u>Total</u>: 18/20*
+
+**Message du correcteur**
+
+Bonjour ,
+
+Merci pour votre réalisation.
+
+Le résultat est très bon. Le site est en ligne, fonctionnel, et il est responsive : <u>très bien</u>.
+Les liens fonctionnent.
+
+- <u>Mise en ligne</u>: OK
+- <u>GitHub</u>: bonne utilisation. commits réguliers, avec commentaires.
+- <u>Site Responsive</u>: fonctionnel, le redimensionnement reste ergonomique.
+- <u>Formulaire de contact</u>: il est important de prévoir une page dédiée au formulaire de contact
+- <u>Description du projet</u>: c’est bien,
+- <u>Référencement</u>: Très bien, vous avez pensé aux métas de référencement.
+
+Bonne réalisation, la charte graphique est intéressante. Visuellement, le site est attrayant. Veillez
+toutefois à la qualité de définition des photos, certaines pixellisent.
+<br>
+<br>
+
+Démonstration: https://pantaflex44.github.io/studi-evals/
