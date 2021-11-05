@@ -184,7 +184,7 @@ $ cd studi_evals
 
 **Dossier et Correction**
 
-[Cliquer pour télécharger](dossier-et-correction.pdf)
+[Cliquer pour visualiser](dossier-et-correction.pdf)
 
 **Notes**
 
