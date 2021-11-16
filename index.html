@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-language" content="fr-FR">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller Game</title>
+    <meta name="keywords" content="jeu,game,dé,dice,javascript,online,web">
+    <meta name="description" content="Jeu de dé réalisé en Javascript.">
+    <meta name="author" content="Christophe LEMOINE <pantaflex@hotmail.fr>">
+
+    <meta property="og:site_name" content="Dice Roller Game">
+    <meta property="og:title" content="Dice Roller Game">
+    <meta property="og:description" content="Jeu de dé réalisé en Javascript.">
+    <meta property="og:image" content="https://pantaflex44.github.io/studi-evals/images/screenshot-desktop.png">
+    <meta property="og:url" content="https://pantaflex44.github.io/studi-evals/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:alt" content="Jeu de dé réalisé en Javascript.">
+
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+
+    <script type="text/javascript" src="./dicerollergame.js"></script>
+</head>
+<body>
+    <div id="diceRollerContainer">
+        présentation
+    </div>
+
+    
+    <script type="text/javascript">
+        // 2 joueurs
+        const drg = new DiceRollerGame('diceRollerContainer')
+        drg.start()
+    </script>
+</body>
+</html>

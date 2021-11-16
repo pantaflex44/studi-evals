@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap');
+
+:root {
+    --drg-primary: #C70039;
+    --drg-light-gray: #F7F7F7;
+    --drg-back: #fff;
+    --drg-front: #111;
+    --drg-dark-gray: #777;
+}
+
+@keyframes animateFromTop {
+    from {top: -100vh; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: Lato, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    background-color: var(--drg-back);
+    color: var(--drg-front);
+}
+
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.playerZone {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--drg-back);
+    width: 50%;
+    min-height: 50%;
+    /*animation-name: animateFromTop;
+    animation-duration: 0.5s*/
+}
+.playerZone.active {
+    background-color: var(--drg-light-gray);
+}
+
+.playerName {
+    margin: 0;
+    margin-top: 10vh;
+    padding: 0;
+    font-size: 3vw;
+    font-weight: 100;
+    color: var(--drg-front);
+    text-transform: uppercase;
+}
+.playerZone.active .playerName {
+    font-weight: 300;
+}
+.playerZone.active .playerName::after {
+    content: '•';
+    position: absolute;
+    margin-left: 10px;
+    color: var(--drg-primary);
+}
+
+.playerTotalScore {
+    margin: 0;
+    margin-top: 10vh;
+    padding: 0;
+    font-size: 8vw;
+    font-weight: 100;
+    color: var(--drg-primary);
+    margin-bottom: auto;
+}
+
+.playerCurrentScoreBox {
+    margin: 0;
+    margin-bottom: 25vh;
+    padding: 1.5vh;
+    min-width: 20%;
+    background-color: var(--drg-primary);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.playerCurrentScoreTitle {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2vw;
+    font-weight: 300;
+    color: var(--drg-front);
+    text-transform: uppercase;
+}
+
+.playerCurrentScore {
+    margin: 0;
+    padding: 0;
+    font-size: 4vw;
+    font-weight: 300;
+    color: var(--drg-back);
+}
