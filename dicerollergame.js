@@ -1,3 +1,12 @@
+/**
+ * Get a random number
+ * @param {number} max Max of random number
+ * @returns A random number
+ */
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max)
+}
+
 //##################################################################################################
 // EVENTS MANAGER
 //##################################################################################################
@@ -186,9 +195,96 @@ class Dice extends Events {
   constructor() {
     super()
     
+    this.domConstructor()
+
+    this.setFace(getRandomInt(6) + 1)
   }
-  
-  
+
+  /**
+   * Contruct the DOM element
+   */
+  domConstructor() {
+    this.htmlDom = document.createElement('div')
+    this.htmlDom.setAttribute('class', 'dice')
+
+    this.cubeDom = document.createElement('div')
+    this.cubeDom.setAttribute('class', 'cube')
+
+    this.frontDom = document.createElement('div')
+    this.frontDom.setAttribute('class', 'face one')
+    this.cubeDom.appendChild(this.frontDom)
+
+    this.backDom = document.createElement('div')
+    this.backDom.setAttribute('class', 'face six')
+    this.cubeDom.appendChild(this.backDom)
+
+    this.rightDom = document.createElement('div')
+    this.rightDom.setAttribute('class', 'face four')
+    this.cubeDom.appendChild(this.rightDom)
+
+    this.leftDom = document.createElement('div')
+    this.leftDom.setAttribute('class', 'face three')
+    this.cubeDom.appendChild(this.leftDom)
+
+    this.topDom = document.createElement('div')
+    this.topDom.setAttribute('class', 'face two')
+    this.cubeDom.appendChild(this.topDom)
+
+    this.bottomDom = document.createElement('div')
+    this.bottomDom.setAttribute('class', 'face five')
+    this.cubeDom.appendChild(this.bottomDom)
+
+    this.htmlDom.appendChild(this.cubeDom)
+
+    this.messageDom = document.createElement('p')
+    this.messageDom.setAttribute('class', 'rollingMessage')
+    this.messageDom.innerText = 'rolling'
+    this.htmlDom.appendChild(this.messageDom)
+  }
+
+  /**
+   * Set the dice face from her number
+   * @param {number} faceNumber Face number
+   */
+  setFace(faceNumber) {
+    if (faceNumber < 1) {
+      faceNumber = 1
+    }
+    if (faceNumber > 6) {
+      faceNumber = 6
+    }
+
+    this.cubeDom.setAttribute('class', `cube active${faceNumber}`)
+  }
+
+  /**
+   * Roll the Dice
+   */
+  roll() {
+    this.messageDom.style.display = 'block'
+
+    let i = getRandomInt(20)
+    this.roller = setInterval(() => {
+      this.setFace(getRandomInt(6) + 1)
+      i -= 1
+      if (i < 0) {
+        this.stop()
+      }
+    }, 250)
+  }
+
+  /**
+   * Stop the roller
+   */
+  stop() {
+    if (this.roller) {
+      clearInterval(this.roller)
+    }
+
+    this.messageDom.style.display = 'none'
+  }
+
+   
 }
 
 //##################################################################################################
@@ -203,9 +299,8 @@ class DiceRollerGame extends Events {
   
   /**
    * Create a new game
-   * @param {PLAYERnumber} playerCount Number of wanted player (min 2, max 4)
    */
-  constructor(containerId, playerCount = 2) {
+  constructor(containerId) {
     super()
 
     this.container = document.getElementById(containerId)
@@ -216,22 +311,12 @@ class DiceRollerGame extends Events {
     // load expected CSS modules
     this.initializeCss()
 
-    if (playerCount < 2) {
-      playerCount = 2
-    }
-    if (playerCount > 4) {
-      playerCount = 4
-    }
-
     // initialize players
+    const playerCount = 2
     this.activePlayer = 0
     this.players = []
     for (let i = 0; i < playerCount; i++) {
       const player = new Player(`Player ${i+1}`)
-
-      player.register('currentScoreUpdated', this.playerCurrentScoreUpdated)
-      player.register('totalScoreUpdated', this.playerTotalScoreUpdated)
-      
       this.players.push(player)
     }
 
@@ -260,24 +345,6 @@ class DiceRollerGame extends Events {
     drgLink.href = './dicerollergame.css'
     head.appendChild(drgLink)
   }
-  
-  /**
-   * Raise when a player update his current score
-   * @param {string} fname Event name
-   * @param {Player} player Expected player
-   */
-  playerCurrentScoreUpdated(fname, player) {
-    console.log(fname, player.name, player.totalScore)
-  }
-  
-  /**
-   * Raise whPLAYERen a player update his total score
-   * @param {string} fname Event name
-   * @param {Player} player Expected player
-   */
-  playerTotalScoreUpdated(fname, player) {
-    console.log(fname, player.name, player.totalScore)
-  }
 
   /**
    * Render a new game
@@ -290,6 +357,19 @@ class DiceRollerGame extends Events {
       this.container.appendChild(this.players[i].htmlDom)
     }
 
+    this.startDom = document.createElement('a')
+    this.startDom.setAttribute('class', 'startLink')
+    this.startDom.innerText = 'new game'
+    this.startDom.href = 'javascript: drg.start()'
+    this.container.appendChild(this.startDom)
+
+    this.holdDom = document.createElement('a')
+    this.holdDom.setAttribute('class', 'holdLink')
+    this.holdDom.innerText = 'hold'
+    this.holdDom.href = 'javascript: drg.hold()'
+    this.container.appendChild(this.holdDom)
+
+    this.container.appendChild(this.dice.htmlDom)
   }
 
   /**
@@ -317,11 +397,13 @@ class DiceRollerGame extends Events {
    */
   start() {
     this.render()
-    this.setActivePlayer(0)
+    this.setActivePlayer(getRandomInt(2))
+    //this.dice.roll()
   }
 
 
 
 }
 
-
+const drg = new DiceRollerGame('diceRollerContainer')
+drg.start()

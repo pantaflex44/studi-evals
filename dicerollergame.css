@@ -4,14 +4,11 @@
     --drg-primary: #C70039;
     --drg-light-gray: #F7F7F7;
     --drg-back: #fff;
+    --drg-back-opacity: #ffffff99;
     --drg-front: #111;
     --drg-dark-gray: #777;
 }
 
-@keyframes animateFromTop {
-    from {top: -100vh; opacity: 0}
-    to {top: 0; opacity: 1}
-}
 
 html, body {
     width: 100vw;
@@ -41,9 +38,7 @@ html, body {
     justify-content: flex-start;
     background-color: var(--drg-back);
     width: 50%;
-    min-height: 50%;
-    /*animation-name: animateFromTop;
-    animation-duration: 0.5s*/
+    height: 100%;
 }
 .playerZone.active {
     background-color: var(--drg-light-gray);
@@ -51,9 +46,9 @@ html, body {
 
 .playerName {
     margin: 0;
-    margin-top: 10vh;
+    margin-top: 5vh;
     padding: 0;
-    font-size: 3vw;
+    font-size: 2.5vw;
     font-weight: 100;
     color: var(--drg-front);
     text-transform: uppercase;
@@ -72,7 +67,7 @@ html, body {
     margin: 0;
     margin-top: 10vh;
     padding: 0;
-    font-size: 8vw;
+    font-size: 6vw;
     font-weight: 100;
     color: var(--drg-primary);
     margin-bottom: auto;
@@ -80,12 +75,15 @@ html, body {
 
 .playerCurrentScoreBox {
     margin: 0;
-    margin-bottom: 25vh;
+    margin-top: 5vh;
+    margin-bottom: 20vh;
     padding: 1.5vh;
-    min-width: 20%;
+    min-width: 15%;
     background-color: var(--drg-primary);
     text-align: center;
     vertical-align: middle;
+    border-radius: 8px;
+    opacity: 0.9;
 }
 
 .playerCurrentScoreTitle {
@@ -100,7 +98,186 @@ html, body {
 .playerCurrentScore {
     margin: 0;
     padding: 0;
-    font-size: 4vw;
+    font-size: 3.5vw;
     font-weight: 300;
     color: var(--drg-back);
+}
+
+.dice {
+    position: absolute;
+    top: calc(50vh - (12vw / 2));
+    left: calc(50vw - (12vw / 2));
+    width: 12vw;
+    height: 12vw;
+    perspective: 30vw;
+}
+
+.cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(-6vw);
+    transition: transform 0.25s;
+}
+.cube.active1 {
+    transform: translateZ(-6vw) rotateY(0deg);
+}
+.cube.active2 {
+    transform: translateZ(-6vw) rotateX(-90deg);
+}
+.cube.active3 {
+    transform: translateZ(-6vw) rotateY(90deg);
+}
+.cube.active4 {
+    transform: translateZ(-6vw) rotateY(-90deg);
+}
+.cube.active5 {
+    transform: translateZ(-6vw) rotateX(90deg);
+}
+.cube.active6 {
+    transform: translateZ(-6vw) rotateY(-180deg);
+}
+
+.face {
+    position: absolute;
+    width: 12vw;
+    height: 12vw;
+    opacity: 0.85;
+}
+.face.one {
+    background: url(./images/dice1.png) no-repeat center;
+    background-size: 12vw 12vw;
+    transform: rotateY(0deg) translateZ(6vw);
+}
+.face.two {
+    background: url(./images/dice2.png) no-repeat center;
+    background-size: 12vw 12vw;
+    transform: rotateX(90deg) translateZ(6vw);
+}
+.face.three {
+    background: url(./images/dice3.png) no-repeat center;
+    background-size: 12vw 12vw;
+    transform: rotateY(-90deg) translateZ(6vw);
+}
+.face.four {
+    background: url(./images/dice4.png) no-repeat center;
+    background-size: 12vw 12vw;
+    transform: rotateY(90deg) translateZ(6vw);
+}
+.face.five {
+    background: url(./images/dice5.png) no-repeat center;
+    background-size: 12vw 12vw;
+    transform: rotateX(-90deg) translateZ(6vw);
+}
+.face.six {
+    background: url(./images/dice6.png) no-repeat center;
+    background-size: 12vw 12vw;
+    transform: rotateY(180deg) translateZ(6vw);
+}
+
+.rollingMessage {
+    text-align: center;
+    color: var(--drg-front);
+    font-size: 2vw;
+    font-weight: 100;
+    text-transform: uppercase;
+    animation-duration: .6s;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    transition: opacity 0.1s;
+    display: none;
+}
+
+.holdLink, .startLink,
+.holdLink:focus, .startLink:focus,
+.holdLink:active, .startLink:active,
+.holdLink:visited, .startLink:visited {
+    color: var(--drg-dark-gray);
+    font-size: 2vw;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: absolute;
+    top: 25vh;
+    background-color: var(--drg-back-opacity);
+    padding: 1vw;
+    border-radius: 8px;
+}
+.startLink,
+.startLink:focus,
+.startLink:active,
+.startLink:visited {
+    top: 10vh;
+    font-size: 1.5vw;
+}
+.holdLink:hover, .startLink:hover {
+    color: var(--drg-front);
+    background-color: var(--drg-back);
+}
+
+
+
+
+
+
+@keyframes blink {
+    0%      { opacity:1; }
+    50%     { opacity:0; }
+    100%    { opacity:1; }
+}
+
+@media screen and (max-width: 576px) {
+
+    .container {
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .playerZone {
+        width: 100%;
+        height: 50%;
+    }
+    .playerZone:nth-child(even) {
+        flex-flow: column-reverse nowrap;
+    }
+
+    .playerTotalScore {
+        margin: 0;
+        font-size: 12vw;
+    }
+    .playerZone:nth-child(odd) .playerTotalScore {
+        margin-top: 5vh;
+    }
+    .playerZone:nth-child(even) .playerTotalScore {
+        margin-bottom: 5vh;
+    }
+
+    .playerZone:nth-child(odd) .playerCurrentScoreBox {
+        margin-top: 10vh;
+    }
+    .playerZone:nth-child(even) .playerCurrentScoreBox {
+        margin-bottom: 10vh;
+    }
+
+    .playerName {
+        font-size: 5vw;
+        margin: 0;
+    }
+    .playerZone:nth-child(odd) .playerName {
+        margin-top: 5vh;
+    }
+    .playerZone:nth-child(even) .playerName {
+        margin-bottom: 5vh;
+    }
+
+    .playerCurrentScoreTitle {
+        font-size: 2vw;
+    }
+    
+    .playerCurrentScore {
+        font-size: 6vw;
+    }
+
 }
