@@ -137,12 +137,35 @@ class Player extends Events {
   }
 
   /**
+   * Add to the current score
+   * @param {number} score 
+   */
+  addToCurrentScore(score) {
+    this.currentScore += score
+
+    this.fire('currentScoreUpdated', this)
+    return this
+  }
+
+  /**
    * Set the total score
    * @param {number} score 
    * @returns 
    */
   setTotalScore(score) {
     this.totalScore = score;
+
+    this.fire('totalScoreUpdated', this)
+    return this
+  }
+
+  /**
+   * Add to total score
+   * @param {number} score 
+   * @returns 
+   */
+  addToTotalScore(score) {
+    this.totalScore += score
 
     this.fire('totalScoreUpdated', this)
     return this
@@ -189,6 +212,8 @@ class Player extends Events {
  */
 class Dice extends Events {
   
+  rolling = false
+
   /**
    * Create a new Dice
    */
@@ -206,6 +231,7 @@ class Dice extends Events {
   domConstructor() {
     this.htmlDom = document.createElement('div')
     this.htmlDom.setAttribute('class', 'dice')
+    this.htmlDom.setAttribute('onClick', 'DiceRollerGame.game().dice.roll()')
 
     this.cubeDom = document.createElement('div')
     this.cubeDom.setAttribute('class', 'cube')
@@ -234,12 +260,12 @@ class Dice extends Events {
     this.bottomDom.setAttribute('class', 'face five')
     this.cubeDom.appendChild(this.bottomDom)
 
-    this.htmlDom.appendChild(this.cubeDom)
+    this.tooltipDom = document.createElement('span')
+    this.tooltipDom.setAttribute('class', 'tooltiptext')
+    this.tooltipDom.innerText = 'click to roll me!'
+    this.htmlDom.appendChild(this.tooltipDom)
 
-    this.messageDom = document.createElement('p')
-    this.messageDom.setAttribute('class', 'rollingMessage')
-    this.messageDom.innerText = 'rolling'
-    this.htmlDom.appendChild(this.messageDom)
+    this.htmlDom.appendChild(this.cubeDom)
   }
 
   /**
@@ -261,14 +287,23 @@ class Dice extends Events {
    * Roll the Dice
    */
   roll() {
-    this.messageDom.style.display = 'block'
+    if (this.rolling) {
+      return
+    }
+    this.rolling = true
+
+    this.tooltipDom.innerText = 'rolling...'
+    this.htmlDom.style.cursor = 'not-allowed'
 
     let i = getRandomInt(20)
     this.roller = setInterval(() => {
-      this.setFace(getRandomInt(6) + 1)
+      const score = getRandomInt(6) + 1;
+      this.fire('diceRolling', score)
+
+      this.setFace(score)
       i -= 1
       if (i < 0) {
-        this.stop()
+        this.stop(score)
       }
     }, 250)
   }
@@ -276,12 +311,16 @@ class Dice extends Events {
   /**
    * Stop the roller
    */
-  stop() {
+  stop(score = 0) {
     if (this.roller) {
       clearInterval(this.roller)
     }
 
-    this.messageDom.style.display = 'none'
+    this.htmlDom.style.cursor = 'pointer'
+    this.tooltipDom.innerText = 'click to roll me!'
+    this.fire('diceRolled', score)
+    
+    this.rolling = false
   }
 
    
@@ -297,6 +336,26 @@ class Dice extends Events {
  */
 class DiceRollerGame extends Events {
   
+  static _instance = null
+  static _containerId = ''
+
+  /**
+   * Get an instance of a DiceRollerGame
+   * @param {string} containerId 
+   * @returns The instance
+   */
+  static game(containerId = '') {
+    if (DiceRollerGame._containerId === '' && containerId !== '') {
+      DiceRollerGame._containerId = containerId
+    }
+
+    if (DiceRollerGame._instance === null) {
+      DiceRollerGame._instance = new DiceRollerGame(DiceRollerGame._containerId)
+    }
+
+    return DiceRollerGame._instance
+  }
+
   /**
    * Create a new game
    */
@@ -322,6 +381,19 @@ class DiceRollerGame extends Events {
 
     // initialize the dice
     this.dice = new Dice()
+    this.dice.register('diceRolling', (fname, score) => {
+      this.holdDom.style.display = 'none'
+    })
+    this.dice.register('diceRolled', (fname, score) => {
+      if (score === 1) {
+        this.players[this.activePlayer].setCurrentScore(0)
+        this.activatedNextPlayer()
+      } else {
+        this.players[this.activePlayer].addToCurrentScore(score)
+
+        this.holdDom.style.display = 'block'
+      }
+    })
   }
 
   /**
@@ -354,19 +426,21 @@ class DiceRollerGame extends Events {
     this.container.setAttribute('class', 'container')
 
     for (let i = 0; i < this.players.length; i++) {
+      this.players[i].setCurrentScore(0)
+      this.players[i].setTotalScore(0)
       this.container.appendChild(this.players[i].htmlDom)
     }
 
     this.startDom = document.createElement('a')
     this.startDom.setAttribute('class', 'startLink')
     this.startDom.innerText = 'new game'
-    this.startDom.href = 'javascript: drg.start()'
+    this.startDom.href = 'javascript: DiceRollerGame.game().start()'
     this.container.appendChild(this.startDom)
 
     this.holdDom = document.createElement('a')
     this.holdDom.setAttribute('class', 'holdLink')
     this.holdDom.innerText = 'hold'
-    this.holdDom.href = 'javascript: drg.hold()'
+    this.holdDom.href = 'javascript: DiceRollerGame.game().hold()'
     this.container.appendChild(this.holdDom)
 
     this.container.appendChild(this.dice.htmlDom)
@@ -389,7 +463,29 @@ class DiceRollerGame extends Events {
 
         this.activePlayer = i
       }
+
+      this.players[i].setCurrentScore(0)
     }
+    if (this.activePlayer < 0) {
+      this.activePlayer = 0
+    }
+    if (this.activePlayer > 1) {
+      this.activePlayer = 1
+    }
+  }
+
+  /**
+   * Activate next player
+   */
+  activatedNextPlayer() {
+    let currentPlayer = this.activePlayer
+
+    currentPlayer += 1
+    if (currentPlayer > (this.players.length - 1)) {
+      currentPlayer = 0
+    }
+
+    this.setActivePlayer(currentPlayer)
   }
 
   /**
@@ -398,12 +494,28 @@ class DiceRollerGame extends Events {
   start() {
     this.render()
     this.setActivePlayer(getRandomInt(2))
-    //this.dice.roll()
   }
+
+  /**
+   * Hold the current score. Add the current score to the total score.
+   */
+  hold() {
+    this.holdDom.style.display = 'none'
+
+    this.players[this.activePlayer].addToTotalScore(this.players[this.activePlayer].currentScore)
+    this.players[this.activePlayer].setCurrentScore(0)
+
+    if (this.players[this.activePlayer].totalScore >= 100) {
+      alert(`${this.players[this.activePlayer].name} win the game!`)
+      this.start()
+      return
+    }
+
+    this.activatedNextPlayer()
+  }
+
 
 
 
 }
 
-const drg = new DiceRollerGame('diceRollerContainer')
-drg.start()

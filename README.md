@@ -93,7 +93,11 @@ Le premier joueur qui atteint les 100 points sur global gagne le jeu.
 
 **...screenshots...**
 
-**Description du projet**
+**Règlement et utilisation**
+
+
+
+**Description du projet et déroulement du développement**
 
 ![https://pantaflex44.github.io/studi-evals/](./images/screenshot-desktop.png)
 
@@ -166,54 +170,47 @@ Souhaitant limiter un maximum l'intégration de multiples éléments dans la pag
  * Load expected CSS modules
  */
 initializeCss() {
-  const heads = document.getElementsByTagName('head')
-  if (!heads || heads.length == 0) {
-    throw new Error('You must create a game instance in a valid HTML DOM document. No head tag found.')
-  }
+    const heads = document.getElementsByTagName('head')
+    if (!heads || heads.length == 0) {
+      throw new Error('You must create a game instance in a valid HTML DOM document. No head tag found.')
+    }
 
-  const head = heads[0]
+    const head = heads[0]
 
-  const googleapisLink = document.createElement('link')
-  googleapisLink.rel = 'preconnect'
-  googleapisLink.href = 'https://fonts.googleapis.com'
-  head.appendChild(googleapisLink)
+    const normalizeLink = document.createElement('link')
+    normalizeLink.rel = 'stylesheet'
+    normalizeLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css'
+    head.appendChild(normalizeLink)
 
-  const gstaticLink = document.createElement('link')
-  gstaticLink.rel = 'preconnect'
-  gstaticLink.href = 'https://fonts.gstatic.com'
-  gstaticLink.crossOrigin = 'crossorigin'
-  head.appendChild(gstaticLink)
-
-  const latoFontLink = document.createElement('link')
-  latoFontLink.rel = 'stylesheet'
-  latoFontLink.href = 'https://fonts.googleapis.com/css2?family=Lato&display=swap'
-  head.appendChild(latoFontLink)
-
-  const normalizeLink = document.createElement('link')
-  normalizeLink.rel = 'stylesheet'
-  normalizeLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css'
-  head.appendChild(normalizeLink)
-
-  const custumCssStyle = document.createElement('style')
-  custumCssStyle.innerHTML = `
-  :root {
-    --primary: #d81b60;
-  }
-  * {
-    font-family: Lato, sans-serif;
-  }
-  html, body {
-    width: 100vw;
-    height: 100vh;
-    background-color: #f9f9f9;
-  }
-  `
-  head.appendChild(custumCssStyle)
+    const drgLink = document.createElement('link')
+    drgLink.rel = 'stylesheet'
+    drgLink.href = './dicerollergame.css'
+    head.appendChild(drgLink)
 }
 ```
 
+Pour intégrer le jeu dans sa page web:
 
-Je crée ce fichier fichier README.md que je compléterai au fûr et à mesure du développement. Je crée par la même un fichier LICENSE.txt contenant la licence d'utilisation des sources. Ici sera employée la GNU GPL v3.
+```html
+<html>
+    <head>
+      ...
+    </head>
+    <body>
+        <div id="diceRollerContainer">
+            <input type="button" value="start" onclick="DiceRollerGame.game().start()">
+        </div>
+
+        <script type="text/javascript" src="./dicerollergame.js"></script>
+        <script type="text/javascript">
+            DiceRollerGame.game('diceRollerContainer')
+        </script>
+    </body>
+</html>
+```
+
+<br><br>
+Pour compléter le nécessaire à l'utilisation de Git et Github, je crée ce fichier fichier README.md que je compléterai au fûr et à mesure du développement. Je crée par la même un fichier LICENSE.txt contenant la licence d'utilisation des sources. Ici sera employée la GNU GPL v3.
 
 Une fois ceci fait, j'ouvre mon terminal, et tape la commande:
 ```bash

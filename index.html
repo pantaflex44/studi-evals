@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="content-language" content="fr-FR">
@@ -23,8 +23,12 @@
 </head>
 <body>
     <div id="diceRollerContainer">
-        présentation
+        <input type="button" value="start" onclick="DiceRollerGame.game().start()">
     </div>
+
     <script type="text/javascript" src="./dicerollergame.js"></script>
+    <script type="text/javascript">
+        DiceRollerGame.game('diceRollerContainer')
+    </script>
 </body>
 </html>

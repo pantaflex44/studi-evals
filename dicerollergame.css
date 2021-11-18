@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css');
 
 :root {
     --drg-primary: #C70039;
@@ -20,6 +21,14 @@ html, body {
     font-weight: 400;
     background-color: var(--drg-back);
     color: var(--drg-front);
+}
+
+.blink {
+    animation-duration: .6s;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    transition: opacity 0.1s;
+    display: none;
 }
 
 .container {
@@ -61,6 +70,10 @@ html, body {
     position: absolute;
     margin-left: 10px;
     color: var(--drg-primary);
+    animation-duration: .6s;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    transition: opacity 0.1s;
 }
 
 .playerTotalScore {
@@ -110,6 +123,38 @@ html, body {
     width: 12vw;
     height: 12vw;
     perspective: 30vw;
+    cursor: pointer;
+}
+.tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    font-size: 1vw;
+    font-weight: bold;
+    text-transform: lowercase;
+    text-align: center;
+    padding: 5px 5px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 105%;
+    left: 50%;
+    margin-left: -67px;
+    opacity: 0.8;
+}
+.tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+.dice:hover .tooltiptext {
+    visibility: visible;
 }
 
 .cube {
@@ -176,44 +221,44 @@ html, body {
     transform: rotateY(180deg) translateZ(6vw);
 }
 
-.rollingMessage {
-    text-align: center;
-    color: var(--drg-front);
-    font-size: 2vw;
-    font-weight: 100;
-    text-transform: uppercase;
-    animation-duration: .6s;
-    animation-name: blink;
-    animation-iteration-count: infinite;
-    transition: opacity 0.1s;
-    display: none;
-}
-
 .holdLink, .startLink,
 .holdLink:focus, .startLink:focus,
 .holdLink:active, .startLink:active,
 .holdLink:visited, .startLink:visited {
-    color: var(--drg-dark-gray);
-    font-size: 2vw;
+    color: var(--drg-front);
     font-weight: 300;
     text-transform: uppercase;
     text-decoration: none;
     position: absolute;
-    top: 25vh;
     background-color: var(--drg-back-opacity);
     padding: 1vw;
     border-radius: 8px;
 }
-.startLink,
-.startLink:focus,
-.startLink:active,
-.startLink:visited {
-    top: 10vh;
+.startLink {
+    top: 4.5vh;
     font-size: 1.5vw;
 }
+.holdLink {
+    display: none;
+    top: 22vh;
+    font-size: 2vw;
+}
 .holdLink:hover, .startLink:hover {
-    color: var(--drg-front);
+    color: var(--drg-dark-gray);
     background-color: var(--drg-back);
+}
+.holdLink::before, .startLink::before {
+    font-family: 'Font Awesome\ 5 Free'; 
+	font-weight: 900;
+    margin-right: 0.5rem;
+    color: var(--drg-primary);
+    opacity: 0.8;
+}
+.holdLink::before {
+    content: '\f055';
+}
+.startLink::before {
+    content: '\f522';
 }
 
 
@@ -272,12 +317,30 @@ html, body {
         margin-bottom: 5vh;
     }
 
+    .playerZone:nth-child(odd) .playerCurrentScoreBox {
+        margin-top: 3vh;
+    }
+    .playerZone:nth-child(even) .playerCurrentScoreBox {
+        margin-bottom: 3vh;
+    }
+
     .playerCurrentScoreTitle {
         font-size: 2vw;
     }
     
     .playerCurrentScore {
         font-size: 6vw;
+    }
+
+    .startLink {
+        top: calc(50% - 3.5vw);
+        left: 5vw;
+        font-size: 3.5vw;
+    }
+    .holdLink {
+        top: calc(50% - 3.5vw);
+        right: 5vw;
+        font-size: 5vw;
     }
 
 }
