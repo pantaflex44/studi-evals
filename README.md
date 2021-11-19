@@ -283,6 +283,7 @@ La base est prète pour commencer le travail.
 
 <br><center>
 
+![https://pantaflex44.github.io/studi-evals/images/screenshot-desktop.png](./images/screenshot-desktop.png)
 ![https://pantaflex44.github.io/studi-evals/images/screencast-desktop.gif](./images/screencast-desktop.gif)
 ![https://pantaflex44.github.io/studi-evals/images/screencast-desktop-winner.gif](./images/screencast-desktop-winner.gif)
 
