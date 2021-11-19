@@ -89,9 +89,10 @@ Le premier joueur qui atteint les 100 points sur global gagne le jeu.
 
 ### Ma proposition
 *(Durée du travail: environ 40 heures)*
+*(outils de développement: VSCode)*
 <br><br><center>
 
-![https://pantaflex44.github.io/studi-evals/](./images/screenshot-desktop-rules.png)
+![https://pantaflex44.github.io/studi-evals/images/screenshot-desktop-rules.png](./images/screenshot-desktop-rules.png)
 
 </center><br><br>
 
@@ -277,7 +278,8 @@ La base est prète pour commencer le travail.
 
 <br><center>
 
-![https://pantaflex44.github.io/studi-evals/](./images/screenshot-desktop.png)
+![https://pantaflex44.github.io/studi-evals/images/screencast-desktop.gif](./images/screencast-desktop.gif)
+![https://pantaflex44.github.io/studi-evals/images/screencast-desktop-winner.gif](./images/screencast-desktop-winner.gif)
 
 </center><br>
 

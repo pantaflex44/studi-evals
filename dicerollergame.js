@@ -125,6 +125,11 @@ class Player extends Events {
     this.totalScoreDom.innerText = this.totalScore
     this.htmlDom.appendChild(this.totalScoreDom)
 
+    this.winDom = document.createElement('p')
+    this.winDom.setAttribute('class', 'playerWinner blink')
+    this.winDom.innerText = 'you win'
+    this.htmlDom.appendChild(this.winDom)
+
     this.currentScoreBoxDom = document.createElement('div')
     this.currentScoreBoxDom.setAttribute('class', 'playerCurrentScoreBox')
 
@@ -382,6 +387,9 @@ class DiceRollerGame extends Events {
     return DiceRollerGame._instance
   }
 
+  scoreMax = 100
+  playerCount = 2
+
   /**
    * Create a new game
    */
@@ -398,10 +406,9 @@ class DiceRollerGame extends Events {
     this.initializeCss()
 
     // initialize players
-    const playerCount = 2
     this.activePlayer = 0
     this.players = []
-    for (let i = 0; i < playerCount; i++) {
+    for (let i = 0; i < this.playerCount; i++) {
       const player = new Player(`Player ${i+1}`)
       this.players.push(player)
     }
@@ -410,6 +417,7 @@ class DiceRollerGame extends Events {
     this.dice = new Dice()
     this.dice.register('diceRolling', (fname, score) => {
       this.holdDom.style.display = 'none'
+      this.startDom.style.display = 'none'
     })
     this.dice.register('diceRolled', (fname, score) => {
       if (score === 1) {
@@ -420,6 +428,8 @@ class DiceRollerGame extends Events {
 
         this.holdDom.style.display = 'block'
       }
+      
+      this.startDom.style.display = 'block'
     })
   }
 
@@ -457,6 +467,9 @@ class DiceRollerGame extends Events {
     this.container.innerHTML = ''
 
     for (let i = 0; i < this.players.length; i++) {
+      this.players[i].htmlDom.classList.remove('bg-confetti-animated')
+      this.players[i].winDom.style.display = 'none'
+      this.players[i].currentScoreBoxDom.style.display = 'block'
       this.players[i].setCurrentScore(0)
       this.players[i].setTotalScore(0)
       this.container.appendChild(this.players[i].htmlDom)
@@ -475,6 +488,7 @@ class DiceRollerGame extends Events {
     this.container.appendChild(this.holdDom)
 
     this.container.appendChild(this.dice.htmlDom)
+    this.dice.htmlDom.style.display = 'block'
   }
 
   /**
@@ -548,9 +562,12 @@ class DiceRollerGame extends Events {
     this.players[this.activePlayer].addToTotalScore(this.players[this.activePlayer].currentScore)
     this.players[this.activePlayer].setCurrentScore(0)
 
-    if (this.players[this.activePlayer].totalScore >= 100) {
-      alert(`${this.players[this.activePlayer].name} win the game!`)
-      this.start()
+    if (this.players[this.activePlayer].totalScore >= this.scoreMax) {
+      this.players[this.activePlayer].htmlDom.classList.add('bg-confetti-animated')
+      this.players[this.activePlayer].winDom.style.display = 'block'
+      this.players[this.activePlayer].currentScoreBoxDom.style.display = 'none'
+      this.dice.htmlDom.style.display = 'none'
+
       return
     }
 
