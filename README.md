@@ -98,8 +98,8 @@ Le premier joueur qui atteint les 100 points sur global gagne le jeu.
 
 **Description du projet et déroulement du développement**
 
-Démonstration:
-https://pantaflex44.github.io/studi-evals/
+Dépot Github: https://github.com/pantaflex44/studi-evals/tree/eval2<br>
+Démonstration: https://pantaflex44.github.io/studi-evals/
 
 N'étant pas du tout spécialiste des jeux web, je commence cet exercice par rechercher des informations à ce sujet.
 Au gré de mes découvertes je construis petit à petit les contours du projet.
