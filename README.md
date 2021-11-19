@@ -88,18 +88,14 @@ Le premier joueur qui atteint les 100 points sur global gagne le jeu.
 <hr>
 
 ### Ma proposition
-#### <b><u>ATTENTION</u></b>: Jeu seulement proposé pour l'éxercice.
-<br><br>
+*(Durée du travail: environ 40 heures)*
+<br><br><center>
 
-**...screenshots...**
+![https://pantaflex44.github.io/studi-evals/](./images/screenshot-desktop-rules.png)
 
-**Règlement et utilisation**
-
-
+</center><br><br>
 
 **Description du projet et déroulement du développement**
-
-![https://pantaflex44.github.io/studi-evals/](./images/screenshot-desktop.png)
 
 Démonstration:
 https://pantaflex44.github.io/studi-evals/
@@ -107,12 +103,8 @@ https://pantaflex44.github.io/studi-evals/
 N'étant pas du tout spécialiste des jeux web, je commence cet exercice par rechercher des informations à ce sujet.
 Au gré de mes découvertes je construis petit à petit les contours du projet.
 <br>
-Une fois ces contours définis je me lance dans la réalisation des Wireframes qui définiront les grandes lignes de la future interface mobile et desktop:
+Une fois ces contours définis, je me lance dans l'écriture des grandes lignes de la future application mobile et desktop.
 
-**...maquette desktop...**
-**...maquette mobile...**
-<br>
-<br>
 Je continue le développement par la mise en place d'un fichier HTML 'index.html' qui sera le receptable web du jeu.
 J'utilise les mêmes principes et procédés que ceux employés dans l'évaluation numéro 1, à savoir l'utilisation d'une structure HTML5 et l'intégration des balises mots clefs, description, titre, et sociales nécessaires au bon référencement.
 <br>
@@ -209,6 +201,36 @@ Pour intégrer le jeu dans sa page web:
 </html>
 ```
 
+Dice Roller Game permet d'être joué en mode plein écran et force l'utilisation du mode paysage. Pour arriver à celà j'ai réalisé ces 2 fonctions:
+
+```javascript
+/**
+ * Force screen in 'Fullscreen' mode
+ */
+function forceFullscreen() {
+  document.body.requestFullscreen()
+    .then(() => {
+      console.log(`Screen viewport initilized in 'fullscreen' mode.`)
+    })
+    .catch((error) => {
+      console.log(`'Fullscreen' mode not availlable: ${error}`)
+    })
+}
+
+/**
+ * Force screen orientation to 'landscape' mode
+ */
+function forceLandscape() {
+  screen.orientation.lock('landscape')
+    .then(() => {
+      console.log(`Screen orientation initilized in 'landscape' mode.`)
+    })
+    .catch((error) => {
+      console.log(`'Landscape' mode not availlable: ${error}`)
+    })
+}
+```
+
 <br><br>
 Pour compléter le nécessaire à l'utilisation de Git et Github, je crée ce fichier fichier README.md que je compléterai au fûr et à mesure du développement. Je crée par la même un fichier LICENSE.txt contenant la licence d'utilisation des sources. Ici sera employée la GNU GPL v3.
 
@@ -253,6 +275,12 @@ $ git push
 
 La base est prète pour commencer le travail.
 
+<br><center>
+
+![https://pantaflex44.github.io/studi-evals/](./images/screenshot-desktop.png)
+
+</center><br>
+
 ### Informations complémentaires
 
 **Code source**
@@ -268,7 +296,7 @@ $ cd studi_evals
 - Toutes les photos d'illustrations proviennent d'Internet.
 - Les icones proviennent du site https://fontawesome.com/.
 
-### Correction du formateur Studi le 5 novembre 2021
+### Correction du formateur Studi le EN ATTENTE
 
 **Dossier et Correction**
 
