@@ -2,6 +2,11 @@
 ## Evaluation numéro 2
 <br>
 
+<u>**Dépot Github**</u>: <a href="https://github.com/pantaflex44/studi-evals/tree/eval2" target="_blank">https://github.com/pantaflex44/studi-evals/tree/eval2</a><br>
+<u>**Démonstration**</u>: <a href="https://pantaflex44.github.io/studi-evals/" target="_blank">https://pantaflex44.github.io/studi-evals/</a>
+
+<br><br>
+
 ### Dynamiser vos sites web avec Javascript
 **Compétence visée**
 
@@ -98,8 +103,8 @@ Le premier joueur qui atteint les 100 points sur global gagne le jeu.
 
 **Description du projet et déroulement du développement**
 
-Dépot Github: https://github.com/pantaflex44/studi-evals/tree/eval2<br>
-Démonstration: https://pantaflex44.github.io/studi-evals/
+<u>**Dépot Github**</u>: <a href="https://github.com/pantaflex44/studi-evals/tree/eval2" target="_blank">https://github.com/pantaflex44/studi-evals/tree/eval2</a><br>
+<u>**Démonstration**</u>: <a href="https://pantaflex44.github.io/studi-evals/" target="_blank">https://pantaflex44.github.io/studi-evals/</a>
 
 N'étant pas du tout spécialiste des jeux web, je commence cet exercice par rechercher des informations à ce sujet.
 Au gré de mes découvertes je construis petit à petit les contours du projet.
@@ -298,7 +303,7 @@ $ cd studi_evals
 - Toutes les photos d'illustrations proviennent d'Internet.
 - Les icones proviennent du site https://fontawesome.com/.
 
-### Correction du formateur Studi le EN ATTENTE
+<!--### Correction du formateur Studi le EN ATTENTE
 
 **Dossier et Correction**
 
@@ -310,8 +315,9 @@ EN ATTENTE
 
 **Message du correcteur**
 
-EN ATTENTE
+EN ATTENTE-->
 <br>
 <br>
 
-Démonstration: https://pantaflex44.github.io/studi-evals/
+<u>**Dépot Github**</u>: <a href="https://github.com/pantaflex44/studi-evals/tree/eval2" target="_blank">https://github.com/pantaflex44/studi-evals/tree/eval2</a><br>
+<u>**Démonstration**</u>: <a href="https://pantaflex44.github.io/studi-evals/" target="_blank">https://pantaflex44.github.io/studi-evals/</a>
