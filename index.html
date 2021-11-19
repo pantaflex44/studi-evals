@@ -23,7 +23,27 @@
 </head>
 <body>
     <div id="diceRollerContainer">
-        <input type="button" value="start" onclick="DiceRollerGame.game().start()">
+        <div class="welcomePanel">
+            <h1>Dice Roller Game</h1>
+            <h3>Jeu de dé au tour à tour.</h3>
+            <div class="game">
+                <button class="newgame" onclick="DiceRollerGame.game().start(document.getElementById('fullscreenCheckbox').checked)">lancer une partie</button>
+                <label for="fullscreenCheckbox">
+                    <input id="fullscreenCheckbox" name="fullscreenCheckbox" type="checkbox" value="1">
+                    plein écran
+                </label>
+            </div>
+            <div class="rules">
+                <h4>Les règles du jeu</h4>
+                <p>Les règles sont très simples. Cliquez sur le bouton <cite>lancer une partie</cite> pour lancer le jeu.</p>
+                <p>Un des deux joueurs est automatiquement sélectionné pour commencer la partie. Le joueur qui aura une pastille clignotante à droite de son nom commencera.</p>
+                <p>Lancez le Dé en cliquant dessus. Une fois ses rotations terminées, le nombre de point affiché sera le score obtenu. Ce score est ajouté au nombre de points du tour en cours. Vous pouvez lancer le Dé autant de fois que vous le souhaité.</p>
+                <p>Si un joueur, après avoir lancé le Dé, obtient un score de <strong>1</strong>, il perd tous ses points actuels et passe son tour!</p>
+                <p>Pour conserver le nombre de points cumulés et l'ajouter au total des points gagnés lors de cette partie, le joueur devra cliquer sur <cite>hold</cite> quand il le souhaite. Sa cagnote au tour sera remise à zéro, puis ça sera au prochain joueur de tenter sa chance.</p>
+                <p>Le premier joueur atteignant un total de 100 points gagne la partie!</p>
+                <p><strong>Bonne chance à tous!</strong></p>
+            </div>
+        </div>
     </div>
 
     <script type="text/javascript" src="./dicerollergame.js"></script>

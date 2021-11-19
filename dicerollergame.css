@@ -4,7 +4,9 @@
 :root {
     --drg-primary: #C70039;
     --drg-light-gray: #F7F7F7;
+    --drg-gray: #F0F0F0;
     --drg-back: #fff;
+    --drg-back-opacity: #ffffff99;
     --drg-back-opacity: #ffffff99;
     --drg-front: #111;
     --drg-dark-gray: #777;
@@ -12,6 +14,8 @@
 
 
 html, body {
+    position: relative;
+    display: flex;
     width: 100vw;
     height: 100vh;
     margin: 0;
@@ -21,7 +25,85 @@ html, body {
     font-weight: 400;
     background-color: var(--drg-back);
     color: var(--drg-front);
+    background: url(./images/wallpaper.jpg) no-repeat center;
+    background-size: cover;
+    opacity: 0.97;
 }
+
+.welcomePanel {
+    width: 100vw;
+    max-width: 800px;
+    height: 100vh;
+    max-height: 600px;
+    background-color: var(--drg-back);
+    border-radius: 8px;
+    margin: auto;
+    box-shadow: 0 0 20px var(--drg-front);
+    font-family: Lato, sans-serif;
+    font-weight: 100;
+    color: var(--drg-front);
+    padding: 2rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.welcomePanel * {
+    font-family: Lato, sans-serif;
+    font-weight: 300;
+}
+.welcomePanel h1 {
+    margin-top: 0;
+    text-align: center;
+    color: var(--drg-primary);
+    text-shadow: 0 0 5px var(--drg-dark-gray);
+}
+.welcomePanel h3 {
+    text-align: center;
+    color: var(--drg-front);
+    text-shadow: 0 0 5px var(--drg-dark-gray);
+}
+.welcomePanel .game {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+.welcomePanel .rules {
+    font-size: 0.8rem;
+}
+.welcomePanel .rules h4 {
+    font-size: 1rem;
+    font-weight: bolder;
+}
+.welcomePanel .rules strong {
+    font-weight: bolder;
+}
+.welcomePanel .rules cite {
+    font-weight: bolder;
+    font-style: normal;
+    text-decoration: underline;
+}
+.welcomePanel button {
+    background-color: var(--drg-light-gray);
+    color: var(--drg-primary);
+    border: 0;
+    border-radius: 8px;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+.welcomePanel button.newgame::before {
+    content: '\f522';
+    font-family: 'Font Awesome\ 5 Free'; 
+	font-weight: 900;
+    margin-right: 0.5rem;
+}
+.welcomePanel button:hover {
+    color: var(--drg-front);
+}
+.welcomePanel label {
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
 
 .blink {
     animation-duration: .6s;
@@ -50,7 +132,7 @@ html, body {
     height: 100%;
 }
 .playerZone.active {
-    background-color: var(--drg-light-gray);
+    background-color: var(--drg-gray);
 }
 
 .playerName {
@@ -85,6 +167,11 @@ html, body {
     color: var(--drg-primary);
     margin-bottom: auto;
 }
+.playerTotalScore::after {
+    content: '/100';
+    font-size: 3vw;
+    color: var(--drg-dark-gray);
+}
 
 .playerCurrentScoreBox {
     margin: 0;
@@ -102,7 +189,7 @@ html, body {
 .playerCurrentScoreTitle {
     margin: 0;
     padding: 0;
-    font-size: 1.2vw;
+    font-size: 1.3vw;
     font-weight: 300;
     color: var(--drg-front);
     text-transform: uppercase;
@@ -188,7 +275,7 @@ html, body {
     position: absolute;
     width: 12vw;
     height: 12vw;
-    opacity: 0.85;
+    opacity: 0.90;
 }
 .face.one {
     background: url(./images/dice1.png) no-repeat center;

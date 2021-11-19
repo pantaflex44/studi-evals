@@ -7,6 +7,32 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max)
 }
 
+/**
+ * Force screen in 'Fullscreen' mode
+ */
+function forceFullscreen() {
+  document.body.requestFullscreen()
+    .then(() => {
+      console.log(`Screen viewport initilized in 'fullscreen' mode.`)
+    })
+    .catch((error) => {
+      console.log(`'Fullscreen' mode not availlable: ${error}`)
+    })
+}
+
+/**
+ * Force screen orientation to 'landscape' mode
+ */
+function forceLandscape() {
+  screen.orientation.lock('landscape')
+    .then(() => {
+      console.log(`Screen orientation initilized in 'landscape' mode.`)
+    })
+    .catch((error) => {
+      console.log(`'Landscape' mode not availlable: ${error}`)
+    })
+}
+
 //##################################################################################################
 // EVENTS MANAGER
 //##################################################################################################
@@ -366,6 +392,7 @@ class DiceRollerGame extends Events {
     if (!this.container) {
       throw new Error('You must specify a valid DOM container.')
     }
+    this.container.setAttribute('class', 'container')
 
     // load expected CSS modules
     this.initializeCss()
@@ -407,6 +434,11 @@ class DiceRollerGame extends Events {
 
     const head = heads[0]
 
+    const manifestLink = document.createElement('link')
+    manifestLink.rel = 'manifest'
+    manifestLink.href = './manifest.json'
+    head.appendChild(manifestLink)
+
     const normalizeLink = document.createElement('link')
     normalizeLink.rel = 'stylesheet'
     normalizeLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css'
@@ -423,7 +455,6 @@ class DiceRollerGame extends Events {
    */
   render() {
     this.container.innerHTML = ''
-    this.container.setAttribute('class', 'container')
 
     for (let i = 0; i < this.players.length; i++) {
       this.players[i].setCurrentScore(0)
@@ -491,9 +522,21 @@ class DiceRollerGame extends Events {
   /**
    * Start a new game
    */
-  start() {
+  start(fullscreen = false) {
+    if (fullscreen) {
+      // put screen in fullscreen mode
+      forceFullscreen()
+    }
+      
+    // force screen in landscape orientation
+    forceLandscape()
+
+    // render the game in the dom tree
     this.render()
-    this.setActivePlayer(getRandomInt(2))
+
+    // first player activated randomly
+    // use setTimeout to wait fullscreen and landscape transformation finished
+    setTimeout(() => this.setActivePlayer(getRandomInt(2)), 200)    
   }
 
   /**
