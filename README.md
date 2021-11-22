@@ -327,6 +327,8 @@ Il manque un petit effet audio, qui dynamiserait davantage l’appli, et rendrai
 4. Connaissance et utilisation d’un framework de présentation de type adaptatif (5 points). 5
 5. Déploiement de la réalisation en ligne (3 points). 3
 
+- *Total: 19/20*
+
 **Message du correcteur**
 
 Très Bon travail. Bravo pour l’animation du dé, cela rend l’appli vraiment dynamique. 
