@@ -304,19 +304,33 @@ $ cd studi_evals
 - Toutes les photos d'illustrations proviennent d'Internet.
 - Les icones proviennent du site https://fontawesome.com/.
 
-<!--### Correction du formateur Studi le EN ATTENTE
+### Correction du formateur Studi le 22 novembre 2021
 
-**Dossier et Correction**
+**Correction**
 
-EN ATTENTE
+Merci pour votre travail. Il faut toujours utiliser le formulaire prévu pour retourner votre évaluation. 
+Le résultat est excellent. Fonctionnement OK. La présentation et les effets visuels sont réussis. 
+Il manque un petit effet audio, qui dynamiserait davantage l’appli, et rendrait le jeu plus immersif.
+
+- GitHub : bonne utilisation. commits réguliers, avec commentaires.
+- Algorithme : fonctionnel
+- Appli Responsive : fonctionnel, le redimensionnement reste ergonomique. Très Bien
+- Description du projet : Bien.
+- Mise en ligne : OK
+- Charte graphique : très bien
 
 **Notes**
 
-EN ATTENTE
+1. Connaître et utiliser un environnement de développement (2points). 2
+2. Écrire un algorithme et l’intégrer dans une page web avec des scripts événementiels et avec un langage de script côté client (5 points). 5
+3. Utilisation des normes ECMAScript (JS) et du DOM (5 points). 4
+4. Connaissance et utilisation d’un framework de présentation de type adaptatif (5 points). 5
+5. Déploiement de la réalisation en ligne (3 points). 3
 
 **Message du correcteur**
 
-EN ATTENTE-->
+Très Bon travail. Bravo pour l’animation du dé, cela rend l’appli vraiment dynamique. 
+La partie Responsive est aussi très bien pensée. Félicitations.
 <br>
 <br>
 
