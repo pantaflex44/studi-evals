@@ -1,0 +1,62 @@
+@use "./reset";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    font-family: sans-serif;
+}
+
+header {
+    display: block;
+    width: 100vw;
+    position: absolute;
+    z-index: 100;
+    top: 2em;
+    left: 1em;
+}
+
+main {
+    position: relative;
+    display: block;
+    overflow-x: hidden;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    transition: opacity 250ms, transform 250ms;
+}
+.page-enter {
+    opacity: 0.5;
+    transform: scale(0.9);
+}
+.page-enter.page-enter-active {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.page-enter-done {
+    transform: scale(1);
+}
+.page-exit {
+    opacity: 1;
+    transform: scale(1);
+}
+.page-exit.page-exit-active {
+    opacity: 0.5;
+    transform: scale(0.5);
+}
+.page-exit-done {
+    opacity: 0;
+    transform: scale(0);
+}
