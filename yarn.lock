@@ -2183,6 +2183,44 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.2.tgz#830beaec4b4091a9e9398ac50f865ddea52186b9"
   integrity sha512-92FRmppjjqz29VMJ2dn+xdyXZBrMlE42AV6Kq6BwjWV7CNUW1hs2FtxSNLQE+gJhaZ6AAmYuO9y8dshhcBl7vA==
 
+"@prismicio/client@^6.1.1":
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/@prismicio/client/-/client-6.1.1.tgz#31facb50d82ce273582d6980ebeb6b090d71b18a"
+  integrity sha512-L5pTJAxI5MPxnveuvYzNsIfSugDfx3uB9Xi5Xh4TJ4gwRFDHBVhQpLXLUyObFKF4aOUoob2AGRfWJCTBv5O06g==
+  dependencies:
+    "@prismicio/helpers" "^2.0.1"
+    "@prismicio/types" "^0.1.22"
+
+"@prismicio/helpers@^2.0.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@prismicio/helpers/-/helpers-2.1.1.tgz#9df742a3a9ab2cdadfc189370636499eafc734d0"
+  integrity sha512-jP17J0ot3zOEMqL3yJteAQW6zwR2ttWwowpVJ02Q6sBk1K9DFfQbQ9ySA4tkBQS0ki3ttWFnrERDzCZ/xCCvGQ==
+  dependencies:
+    "@prismicio/richtext" "^2.0.1"
+    "@prismicio/types" "^0.1.23"
+    escape-html "^1.0.3"
+    imgix-url-builder "^0.0.2"
+
+"@prismicio/react@^2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@prismicio/react/-/react-2.0.5.tgz#1582c958fab835dfb11bf4e50ec8b11e7f0eeb70"
+  integrity sha512-PRA2a9QROd6E4L74VKZjQFawYd8ZZLBXbFS+cpqASCDkFdJMi0BaO9w2UyPNsLtW79te3CsnlDgjSo8BeAuzuQ==
+  dependencies:
+    "@prismicio/helpers" "^2.0.1"
+    "@prismicio/richtext" "^2.0.1"
+
+"@prismicio/richtext@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@prismicio/richtext/-/richtext-2.0.1.tgz#6342f071601d88e99ca03faab382202087fd55a5"
+  integrity sha512-sM+eusvE4PsKnwefDRd0ai3Ny59XJ54dn6xfwq0Fyqj0LAcuyB2gRjSufbIqYOZ1r4JKMQArDKrypNEcrbBFkA==
+  dependencies:
+    "@prismicio/types" "^0.1.22"
+
+"@prismicio/types@^0.1.22", "@prismicio/types@^0.1.23":
+  version "0.1.23"
+  resolved "https://registry.yarnpkg.com/@prismicio/types/-/types-0.1.23.tgz#1ba99107fc6ba7dc94f50f237ef72432e08a7081"
+  integrity sha512-GzkvUTuXZvAmHhxr6g+puW2SfwUxGjNvgCIeU2rTq8VHlrSaoPZs+iD/xRkpLue++EfCmtM295fqu8R4c/TNRA==
+
 "@radix-ui/number@0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@radix-ui/number/-/number-0.1.0.tgz#73ad13d5cc5f75fa5e147d72e5d5d5e50d688256"
@@ -5143,7 +5181,7 @@ escalade@^3.1.1:
   resolved "https://registry.npmjs.org/escalade/-/escalade-3.1.1.tgz"
   integrity sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw==
 
-escape-html@~1.0.3:
+escape-html@^1.0.3, escape-html@~1.0.3:
   version "1.0.3"
   resolved "https://registry.npmjs.org/escape-html/-/escape-html-1.0.3.tgz"
   integrity sha1-Aljq5NPQwJdN4cFpGI7wBR0dGYg=
@@ -6396,6 +6434,11 @@ ignore@^5.1.8, ignore@^5.2.0:
   version "5.2.0"
   resolved "https://registry.npmjs.org/ignore/-/ignore-5.2.0.tgz"
   integrity sha512-CmxgYGiEPCLhfLnpPp1MoRmifwEIOgjcHXxOBjv7mY96c+eWScsOP9c112ZyLdWHi0FxHjI+4uVhKYp/gcdRmQ==
+
+imgix-url-builder@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/imgix-url-builder/-/imgix-url-builder-0.0.2.tgz#49a583cacdb3ac38a0a5c098271bec3b3cdee55b"
+  integrity sha512-PHT9aXvD+I6x5UAdvsAKNALvxHI1AWGGpxLUQDQAXzUt54ScFHxxODJ/4/XWDM55cqvRCvT3MMxbOWjgWhLe9Q==
 
 immer@^9.0.7:
   version "9.0.12"
@@ -9110,6 +9153,11 @@ prism-react-renderer@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/prism-react-renderer/-/prism-react-renderer-1.2.1.tgz#392460acf63540960e5e3caa699d851264e99b89"
   integrity sha512-w23ch4f75V1Tnz8DajsYKvY5lF7H1+WvzvLUcF0paFxkTHSp42RS0H5CttdN2Q8RR3DRGZ9v5xD/h3n8C8kGmg==
+
+prismic@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/prismic/-/prismic-0.0.1.tgz#9c9e36beebfb24c4c626ea9d835074e8e520d32d"
+  integrity sha512-C4N6sq/MTeSibhE7hKf7L2tqsX0TyRa5Qh+nr0HopHBUZd6bONOi5qOzAJOO4A7V8NasGvjybnHY8SdHIa99nw==
 
 process-nextick-args@~2.0.0:
   version "2.0.1"

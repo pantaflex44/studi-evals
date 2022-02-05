@@ -13,11 +13,11 @@ html, body {
 
 header {
     display: block;
+    position: relative;
+    top: 0;
+    left: 0;
     width: 100vw;
-    position: absolute;
     z-index: 100;
-    top: 2em;
-    left: 1em;
 }
 
 main {
@@ -32,7 +32,7 @@ main {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     padding: 0;
     margin: 0;
     transition: opacity 250ms, transform 250ms;

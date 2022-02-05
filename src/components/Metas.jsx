@@ -1,54 +1,75 @@
 import React, { useContext, useMemo } from "react";
 import { Helmet } from "react-helmet-async";
 
-import QuickParcelProjectLogo from "../../assets/QuickParcelProject.png";
+import CharlesCantin from "../../assets/charles-cantin.jpg";
+import Favicon from "../../assets/favicon-32x32.png";
 
-import { PageContext } from "../App";
-
-export default function Metas() {
-    const Page = useContext(PageContext);
-
+export default function Metas({ page }) {
     return useMemo(() => {
         return (
-            <Helmet htmlAttributes={{ lang: "fr-FR" }}>
-                <title>QuickParcelProject</title>
+            <Helmet htmlAttributes={{ lang: page?.lang }}>
+                <title>{`${page?.data.titre_de_la_page[0].text} - ${page?.data.slogan[0].text}`}</title>
                 <meta
                     name="description"
-                    content="A quick project maker with Parcel, Sass, React and Jest"
+                    content={page?.data.description[0].text}
                 />
-                <meta http-equiv="content-language" content="fr-FR" />
+                <meta http-equiv="content-language" content={page?.lang} />
+                <meta name="keywords" content={page?.data.mots_clefs[0].text} />
                 <meta
-                    name="keywords"
-                    content="parcel,sass,react,jest,project"
+                    name="author"
+                    content={page?.data.nom_de_l_auteur[0].text}
                 />
-                <meta name="author" content={Page.author} />
-                <meta name="generator" content="QuickParcelProject" />
-                <meta name="publisher" content="QuickParcelProject" />
-                <meta property="og:site_name" content="QuickParcelProject" />
-                <meta property="og:title" content="QuickParcelProject" />
+                <meta
+                    name="generator"
+                    content="QuickParcelProject and Prismic.io for Studi evaluation named 'ECF Front'"
+                />
+                <meta
+                    name="publisher"
+                    content={page?.data.nom_de_l_auteur[0].text}
+                />
+                <meta
+                    property="og:site_name"
+                    content={`${page?.data.titre_de_la_page[0].text} - ${page?.data.slogan[0].text}`}
+                />
+                <meta
+                    property="og:title"
+                    content={page?.data.titre_de_la_page[0].text}
+                />
                 <meta
                     property="og:description"
-                    content="A quick project maker with Parcel, Sass, React and Jest"
+                    content={page?.data.description[0].text}
                 />
-                <meta property="og:image" content={QuickParcelProjectLogo} />
+                <meta
+                    property="og:image"
+                    content={
+                        page && page?.data.image_de_fond
+                            ? page.data.image_de_fond.url
+                            : CharlesCantin
+                    }
+                />
                 <meta property="og:url" content={window.location.href} />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta
                     name="twitter:image:alt"
-                    content={QuickParcelProjectLogo}
+                    content={`${page?.data.titre_de_la_page[0].text} - ${page?.data.slogan[0].text}`}
                 />
-                <link
-                    rel="icon"
-                    type="image/x-icon"
-                    href={QuickParcelProjectLogo}
-                ></link>
+                <link rel="icon" type="image/x-icon" href={Favicon}></link>
                 <link
                     rel="canonical"
-                    href={window.location.href.split(/[\\/]/).pop()}
+                    href={
+                        window.location.protocol +
+                        "//" +
+                        window.location.host +
+                        window.location.pathname
+                    }
                 />
-                <base href={window.location.href.split(/[\\/]/).pop()} />
+                <base
+                    href={
+                        window.location.protocol + "//" + window.location.host
+                    }
+                />
                 <meta name="robots" content="all" />
             </Helmet>
         );
-    }, [Page]);
+    }, [page]);
 }
