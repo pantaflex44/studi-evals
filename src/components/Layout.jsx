@@ -1,6 +1,4 @@
-import React from "react";
-
-import * as styles from "../css/App.module.scss";
+import React, { useState, cloneElement } from "react";
 
 import MainMenu from "./MainMenu";
 

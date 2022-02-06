@@ -1,7 +1,5 @@
 import React from "react";
 
-import * as styles from "../css/App.module.scss";
-
 export default function MentionsLegales({ page }) {
     return (
         page && (

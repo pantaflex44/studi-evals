@@ -1,51 +1,65 @@
-import React, { useContext } from "react";
-import { NavLink } from "react-router-dom";
-
-import * as styles from "../css/App.module.scss";
+import React, { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 
 import { IoLogoFacebook, IoLogoInstagram } from "react-icons/io5";
 
 import { getMenu } from "../js/primatic";
 
-export default function MainMenu() {
+export default function MainMenu({ currentLocation }) {
+    const [menuState, setMenuState] = useState(false);
+
+    const handleMenuClick = (e) => {
+        e.preventDefault();
+        setMenuState((menuState) => !menuState);
+    };
+
+    const handleMenuLinkClick = (e) => {
+        setMenuState((menuState) => false);
+    };
+
     return (
-        <nav>
-            <ul className={styles.mainMenu}>
-                {getMenu().map((item, i) => (
-                    <li key={i}>
-                        <NavLink
-                            to={`${item.path}`}
-                            title={item.title}
-                            className={({ isActive }) =>
-                                isActive
-                                    ? styles.currentNavlink
-                                    : styles.navlink
-                            }
-                        >
-                            <span>
-                                <div
-                                    className={styles.menuIcon}
-                                    style={{
-                                        backgroundImage: `url(${item.icon})`,
-                                    }}
-                                    title={item.title}
-                                />{" "}
+        <>
+            <div
+                className={
+                    menuState ? "menu-burger menu-burger-opened" : "menu-burger"
+                }
+                onClick={handleMenuClick}
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+                <span>Menu</span>
+            </div>
+            <nav id="menu" className={menuState ? "menu menu-opened" : "menu"}>
+                <ul>
+                    {getMenu().map((item, i) => (
+                        <li key={i}>
+                            <NavLink
+                                to={`${item.path}`}
+                                title={item.title}
+                                className={({ isActive }) =>
+                                    isActive ? "menu_current-link" : ""
+                                }
+                                onClick={handleMenuLinkClick}
+                            >
                                 {item.title}
-                            </span>
-                        </NavLink>
+                            </NavLink>
+                        </li>
+                    ))}
+                    <li>
+                        <a href="#" target="_blank" title="Mon compte Facebook">
+                            <IoLogoFacebook />
+                        </a>
+                        <a
+                            href="#"
+                            target="_blank"
+                            title="Mon compte Instagram"
+                        >
+                            <IoLogoInstagram />
+                        </a>
                     </li>
-                ))}
-                <li>
-                    <a href="#" target="_blank" title="Mon compte Facebook">
-                        <IoLogoFacebook />
-                    </a>
-                </li>
-                <li>
-                    <a href="#" target="_blank" title="Mon compte Instagram">
-                        <IoLogoInstagram />
-                    </a>
-                </li>
-            </ul>
-        </nav>
+                </ul>
+            </nav>
+        </>
     );
 }

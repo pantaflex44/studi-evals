@@ -8,6 +8,7 @@ import "./css/_app.scss";
 
 import { loadRoutes } from "./js/primatic";
 
+import { SpinnerDotted, SpinnerRoundFilled } from "spinners-react";
 import Page from "./components/Page";
 import Layout from "./components/Layout";
 import Accueil from "./pages/Accueil";
@@ -16,6 +17,24 @@ import Cgv from "./pages/Cgv";
 import MentionsLegales from "./pages/MentionsLegales";
 import Prestations from "./pages/Prestations";
 import Contact from "./pages/Contact";
+
+export function useOnScreen(ref) {
+    const [isIntersecting, setIntersecting] = useState(false);
+
+    const observer = new IntersectionObserver(([entry]) =>
+        setIntersecting(entry.isIntersecting)
+    );
+
+    useEffect(() => {
+        observer.observe(ref.current);
+
+        return () => {
+            observer.disconnect();
+        };
+    }, []);
+
+    return isIntersecting;
+}
 
 const TransitionWrapper = ({ routes }) => {
     const location = useLocation();
@@ -58,14 +77,23 @@ export default function Loader({ prismicRoutes }) {
     const [appState, setAppState] = useState(null);
 
     useEffect(() => {
-        loadRoutes(prismicRoutes)
-            .then((routes) => {
-                setAppState(<App routes={routes} />);
-            })
-            .catch((error) => console.log(`App error: ${error}`));
+        loadRoutes(prismicRoutes).then((routes) => {
+            setAppState(<App routes={routes} />);
+        });
     }, []);
 
-    return appState ? appState : <div className="pageLoader"></div>;
+    return appState ? (
+        appState
+    ) : (
+        <div className="loader">
+            <SpinnerRoundFilled
+                size={75}
+                thickness={100}
+                speed={100}
+                color="#1A374D"
+            />
+        </div>
+    );
 }
 
 render(
