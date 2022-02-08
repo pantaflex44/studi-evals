@@ -22,10 +22,12 @@ $clr-active: #5F5364;
 $font-body: 'Poppins', sans-serif;
 $font-title: "Dancing Script", cursive;
 
-$menuBurgerTop: 2em;
-$menuBurgerLeft: 2em;
+$menuBurgerTop: 2rem;
+$menuBurgerLeft: 2rem;
 $menuBurgerWidth: clamp(24px, 4vmin, 32px);
 $menuBurgerHeight: 24px;
+$menuBurgerBackWidth: 10rem;
+$menuBurgerBK1: 550px;
 
 * {
     margin: 0;
@@ -36,7 +38,7 @@ $menuBurgerHeight: 24px;
 html, body {
     overflow-x: hidden;
     font-family: $font-body;
-    font-size: clamp(14px, 2vmin, 16px);
+    font-size: clamp(1rem, 4vw, 1.5rem);
     background-color: $clr-background;
     color: $clr-body;
     font-size: 1rem;
@@ -107,10 +109,42 @@ main {
     transform: scale(0);
 }
 
-.menu-burger {
+.page-title {
+    $maxWidth: 300px;
+
     position: absolute;
-    left: 2em;
-    top: 2em;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.5em;
+    align-items: center;
+
+    top: calc($menuBurgerTop + ($menuBurgerHeight / 2) + 1px);
+    left: calc($menuBurgerLeft + $menuBurgerWidth + $menuBurgerBackWidth + 2em);
+    transform: translateY(-50%);
+    color: $clr-active;
+    font-family: $font-title;
+    font-weight: bold;
+    font-size: clamp(1.25em, calc(1.25rem + ((1vw - 0.48em) * 2.0833)), 2.2em);
+    line-height: 1.5em;
+
+    @media screen and (max-width: $menuBurgerBK1) {
+        left: calc($menuBurgerLeft + $menuBurgerWidth + 1em);
+    }
+
+    svg {
+        margin-top: 0;
+    }
+}
+
+.menu-burger {
+    $backgroundPadding: 0.5em;
+    $backgroundMargin: 0px;
+
+    position: absolute;
+    left: $menuBurgerLeft;
+    top: $menuBurgerTop;
     width: $menuBurgerWidth;
     height: $menuBurgerHeight;
     z-index: 102;
@@ -118,14 +152,22 @@ main {
 
     &::before {
         content: '';
+        box-sizing: border-box;
         position: absolute;
-        top: -0.5em;
-        left: -0.5em;
-        width: calc($menuBurgerWidth + 1em);
-        height: calc($menuBurgerHeight + 2em);
+        top: calc(($backgroundPadding * -1) + $backgroundMargin);
+        left: calc(($backgroundPadding * -1) + $backgroundMargin);
+        width: calc($menuBurgerWidth + (2 * $backgroundPadding) + $menuBurgerBackWidth);
+        height: calc($menuBurgerHeight + (2 * $backgroundPadding));
         border-radius: 10px;
-        background-color: transparentize($clr-background, 0);
+        background-color: transparentize($clr-background, 0.1);
         transition: all 250ms ease-in-out;
+        border: 4px solid transparentize($clr-background, 0.25);
+    }
+
+    @media screen and (max-width: $menuBurgerBK1) {
+        &::before {
+            width: calc($menuBurgerWidth + (2 * $backgroundPadding));
+        }
     }
 
     span {
@@ -133,8 +175,8 @@ main {
         display: block;
         width: 100%;
         height: calc(($menuBurgerHeight / 10) * 2);
-        left: 0;
-        background-color: $clr-primary-200;
+        left: $backgroundMargin;
+        background-color: $clr-primary-400;
         border-radius: calc(($menuBurgerHeight / 10) * 2);
         transition: all 250ms ease-in-out;
 
@@ -156,16 +198,23 @@ main {
             position: absolute;
             display: block;
             overflow-x: hidden;
-            left: 50%;
-            bottom: calc(-80%);
+            left: calc($menuBurgerLeft + 1rem);
+            top: calc(50% + 1px);
             text-transform: uppercase;
             font-family: inherit;
             cursor: pointer;
-            font-size: calc($menuBurgerWidth / 3);
+            font-size: calc($menuBurgerHeight / 2);
             font-weight: bold;
             color: $clr-primary-300;
-            transform: translateX(-50%) scale(1);
-            transition: all 150ms ease-in-out;
+            transform: translateY(-50%) scale(1);
+            transition: all 250ms ease-in-out;
+            white-space: nowrap;
+        }
+
+        @media screen and (max-width: $menuBurgerBK1) {
+            &:nth-child(4) {
+                display: none;
+            }
         }
     }
 
@@ -212,12 +261,13 @@ main {
             }
 
             &:nth-child(4) {
-                transform: translateX(-50%) scale(0);
+                transform: translateY(-50%) scale(0);
             }
         }
 
         &::before {
             content: '';
+            width: calc($menuBurgerWidth + (2 * $backgroundPadding));
             height: calc($menuBurgerHeight + 1em);
         }
     }
@@ -316,16 +366,15 @@ h2 {
 
     div {
         text-align: center;
-        text-shadow: 0 0 5px $clr-primary-300;
         width: 100%;
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        backdrop-filter: blur(3px);
         border-radius: 10px;
         overflow: hidden;
+        text-shadow: 0 0 5px transparentize($clr-body, 0.5);
 
         h1, h2 {
             color: $clr-background;
@@ -334,6 +383,194 @@ h2 {
 
 }
 
+
+
+
+
+.container {
+    margin: 1em;
+    background: linear-gradient(to bottom, $clr-background, transparentize($clr-primary-100, 0.5));
+    border-radius: 10px;
+}
+
+.content {
+    width: min(100%, 800px);
+    margin: 0 auto;
+    padding: 1em 2em;
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
+
+    img {
+        max-width: 100%;
+        height: auto;
+        max-height: 300px;
+        border-radius: 10px;
+        margin: 1em 0;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    h1 {
+        font-family: $font-body;
+        font-size: clamp(3em, calc(3rem + ((1vw - 0.48em) * 2.7778)), 5em);
+        margin: 0.5em 0;
+        margin-top: 1em;
+        color: $clr-primary-400;
+    }
+
+    h2 {
+        font-family: $font-title;
+        font-size: clamp(2.5em, calc(2.5rem + ((1vw - 0.48em) * 2.7778)), 4em);
+        margin: 0.5em 0;
+        margin-top: 0.5em;
+        color: $clr-primary-400;
+        font-weight: bold;
+    }
+
+    h3 {
+        font-family: $font-body;
+        font-size: clamp(1.5em, calc(1.5rem + ((1vw - 0.48em) * 2.7778)), 3em);
+        font-weight: 900;
+        margin: 0.5em 0;
+        margin-top: 1em;
+        color: $clr-primary-300;
+        border-bottom: 1px solid $clr-active;
+    }
+
+    h4 {
+        font-family: $font-body;
+        font-size: clamp(1em, calc(1rem + ((1vw - 0.48em) * 2.0833)), 2em);
+        font-weight: 900;
+        margin: 0.5em 0;
+        margin-top: 1em;
+        color: $clr-active;
+    }
+
+    h5 {
+        font-family: $font-body;
+        font-size: clamp(0.75em, calc(0.75rem + ((1vw - 0.48em) * 2.0833)), 2em);
+        font-weight: 900;
+        margin: 0.5em 0;
+        margin-top: 1em;
+        color: $clr-primary-400;
+        font-weight: bold;
+    }
+
+    h6 {
+        font-family: $font-body;
+        font-size: clamp(0.5em, calc(0.5rem + ((1vw - 0.48em) * 2.0833)), 2em);
+        font-weight: 400;
+        margin: 0.5em 0;
+        margin-top: 1em;
+        color: $clr-body;
+    }
+
+    p {
+        margin: 1em 0;
+        line-height: 1.4em;
+    }
+
+    strong {
+        font-weight: bold;
+    }
+
+    em {
+        font-style: italic;
+    }
+
+    a {
+        color: $clr-primary-300;
+        font-weight: 100;
+        text-decoration-color: $clr-primary-300;
+        transition: all 250ms ease-in-out;
+
+        &:hover {
+            color: $clr-primary-400;
+            text-decoration-color: $clr-primary-400;
+        }
+    }
+
+    ul {
+        list-style-type: disc;
+        list-style-position: inside;
+    }
+
+    ol {
+        list-style: decimal;
+        list-style-position: inside;
+        list-style-type: decimal-leading-zero;
+        
+    }
+    
+    .prestations {
+        margin: 3rem auto;
+
+        .prestation {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            position: relative;
+            margin: 2rem auto;
+            background-color: $clr-background;
+            border-radius: 10px;
+            box-shadow: 0 0 3px transparentize($clr-body, 0.9);
+
+            img {
+                max-height: 230px;
+                object-fit: cover;
+                object-position: center;
+                border: 1px solid $clr-background;
+                align-items: center;
+                justify-content: center;
+                filter: grayscale(1);
+                transition: filter 250ms ease-in-out;
+            }
+
+            &:hover {
+                img {
+                    filter: grayscale(0);
+                }
+            }
+
+            img, h4 {
+                margin: 0;
+            }
+
+            .prestation-price {
+                position: absolute;
+                z-index: 99;
+                background-color: $clr-primary-200;
+                padding: 1em;
+                border-radius: 10px;
+                filter: sepia(1);
+                transform: rotate(-10deg);
+                top: -10px;
+                left: -10px;
+                font-family: $font-title;
+                font-size: larger;
+                font-weight: bold;
+                box-shadow: 0 0 3px transparentize($clr-body, 0.2);
+            }
+
+            .prestation-infos {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                padding: 1em;
+                overflow: hidden;
+
+                h4 {
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+
+                p {
+                    font-size: smaller;
+                    text-overflow: ellipsis;
+                }
+            }
+
+        }
+    }
+}
 
 
 

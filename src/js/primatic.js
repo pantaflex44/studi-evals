@@ -118,3 +118,115 @@ export const getPageFromPath = async (path) => {
 
     return {};
 };
+
+export const prismicContentToHtml = (content) => {
+    if (!content || content.length === 0) {
+        return "";
+    }
+
+    const blocks = [];
+
+    let prevType = "";
+
+    for (const block of content) {
+        let tags = "";
+
+        let content = block.text ? block.text.trim() : "";
+
+        switch (block.type) {
+            case "heading1":
+                tags = "<h1>$1</h1>";
+                break;
+            case "heading2":
+                tags = "<h2>$1</h2>";
+                break;
+            case "heading3":
+                tags = "<h3>$1</h3>";
+                break;
+            case "heading4":
+                tags = "<h4>$1</h4>";
+                break;
+            case "heading5":
+                tags = "<h5>$1</h5>";
+                break;
+            case "heading6":
+                tags = "<h6>$1</h6>";
+                break;
+            case "paragraph":
+                tags = "<p>$1</p>";
+                break;
+            case "o-list-item":
+                tags = "<li>$1</li>";
+                if (prevType !== "o-list-item") {
+                    tags = "<ol>" + tags;
+                }
+                break;
+            case "list-item":
+                tags = "<li>$1</li>";
+                if (prevType !== "list-item") {
+                    tags = "<ul>" + tags;
+                }
+                break;
+            case "image":
+                tags = `<img ${block.url ? `src="${block.url}"` : `src="#"`} ${
+                    block.alt ? `alt="${block.alt}"` : ""
+                } ${
+                    block.dimensions?.width
+                        ? `width="${block.dimensions?.width}"`
+                        : ""
+                } ${
+                    block.dimensions?.height
+                        ? `height="${block.dimensions?.height}"`
+                        : ""
+                } lazy="loading" />`;
+                break;
+            default:
+                tags = `<p>$1</p>`;
+        }
+
+        if (prevType === "o-list-item" && block.type !== "o-list-item") {
+            tags = "</ol>" + tags;
+        } else if (prevType === "list-item" && block.type !== "list-item") {
+            tags = "</ul>" + tags;
+        }
+        prevType = block.type;
+
+        text = [...content];
+        if (block.spans) {
+            for (const span of block.spans) {
+                start = span.start;
+                end = span.end;
+                if (!text[span.end]) {
+                    end--;
+                }
+
+                type = span.type;
+
+                switch (type) {
+                    case "hyperlink":
+                        text[start] =
+                            `<a href="${
+                                span.data.url
+                            }" rel="nopenener" title="${text
+                                .slice(start, end)
+                                .join("")}" ${
+                                span.data?.target
+                                    ? `target="${span.data?.target}"`
+                                    : ""
+                            }>` + text[start];
+                        text[end] = text[end] + `</a>`;
+                        break;
+                    default:
+                        text[start] = `<${type}>` + text[start];
+                        text[end] = text[end] + `</${type}>`;
+                }
+            }
+        }
+
+        text = text.join("");
+        text = tags.replace("$1", text.length > 0 ? text : "&nbsp;");
+        blocks.push(text);
+    }
+
+    return blocks.join("\n");
+};

@@ -1,4 +1,4 @@
-function wait(duration) {
+const wait = (duration) => {
     const t = Date.now();
 
     while (true) {
@@ -6,4 +6,4 @@ function wait(duration) {
             return true;
         }
     }
-}
+};

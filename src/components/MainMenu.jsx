@@ -28,7 +28,7 @@ export default function MainMenu({ currentLocation }) {
                 <span></span>
                 <span></span>
                 <span></span>
-                <span>Menu</span>
+                <span>Naviguer sur le site</span>
             </div>
             <nav id="menu" className={menuState ? "menu menu-opened" : "menu"}>
                 <ul>

@@ -1,22 +1,24 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import "./css/_app.scss";
+import "./js/functions";
 
 import { loadRoutes } from "./js/primatic";
 
-import { SpinnerDotted, SpinnerRoundFilled } from "spinners-react";
+import { SpinnerRoundFilled } from "spinners-react";
 import Page from "./components/Page";
 import Layout from "./components/Layout";
-import Accueil from "./pages/Accueil";
-import Gallery from "./pages/Gallery";
-import Cgv from "./pages/Cgv";
-import MentionsLegales from "./pages/MentionsLegales";
-import Prestations from "./pages/Prestations";
-import Contact from "./pages/Contact";
+
+const Accueil = lazy(() => import("./pages/Accueil"));
+const Gallery = lazy(() => import("./pages/Gallery"));
+const Cgv = lazy(() => import("./pages/Cgv"));
+const MentionsLegales = lazy(() => import("./pages/MentionsLegales"));
+const Prestations = lazy(() => import("./pages/Prestations"));
+const Contact = lazy(() => import("./pages/Contact"));
 
 export function useOnScreen(ref) {
     const [isIntersecting, setIntersecting] = useState(false);
@@ -65,9 +67,22 @@ export function App({ routes }) {
     return (
         <HelmetProvider>
             <BrowserRouter basename={currentPath}>
-                <Layout>
-                    <TransitionWrapper routes={routes} />
-                </Layout>
+                <Suspense
+                    fallback={
+                        <div className="loader">
+                            <SpinnerRoundFilled
+                                size={75}
+                                thickness={100}
+                                speed={100}
+                                color="#1A374D"
+                            />
+                        </div>
+                    }
+                >
+                    <Layout>
+                        <TransitionWrapper routes={routes} />
+                    </Layout>
+                </Suspense>
             </BrowserRouter>
         </HelmetProvider>
     );
