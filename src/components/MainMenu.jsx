@@ -14,7 +14,7 @@ export default function MainMenu({ currentLocation }) {
     };
 
     const handleMenuLinkClick = (e) => {
-        setMenuState((menuState) => false);
+        setMenuState(false);
     };
 
     return (

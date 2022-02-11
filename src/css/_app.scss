@@ -1,5 +1,8 @@
 @use "./reset";
 
+
+
+/* all used fonts */
 @font-face {
     font-family: 'Dancing Script';
     src: url('../../assets/fonts/Dancing_Script/DancingScript-VariableFont_wght.ttf')  format('truetype');
@@ -9,32 +12,53 @@
     src: url('../../assets/fonts/Poppins/Poppins-Regular.ttf')  format('truetype');
 }
 
-$clr-background: #fff;
-$clr-body: #111;
 
-$clr-primary-400: #071C2B;
-$clr-primary-300: #395661;
-$clr-primary-200: #7c95ad;
-$clr-primary-100: #e8f4ff;
 
-$clr-active: #5F5364;
 
-$font-body: 'Poppins', sans-serif;
-$font-title: "Dancing Script", cursive;
+/*
+############################################################
+#######################  SETTINGS  #########################
+############################################################
+*/
 
-$menuBurgerTop: 2rem;
-$menuBurgerLeft: 2rem;
-$menuBurgerWidth: clamp(24px, 4vmin, 32px);
-$menuBurgerHeight: 24px;
-$menuBurgerBackWidth: 10rem;
-$menuBurgerBK1: 550px;
+    /* Background used colors */
+    $clr-background: #fff;
+    $clr-body: #111;
 
+    /* Foreground used colors */
+    $clr-primary-400: #071C2B;
+    $clr-primary-300: #395661;
+    $clr-primary-200: #7c95ad;
+    $clr-primary-100: #e8f4ff;
+    $clr-active: #5F5364;
+
+    /* Used fonts links */
+    $font-body: 'Poppins', sans-serif;
+    $font-title: "Dancing Script", cursive;
+
+    /* Menu burger settings */
+    $menuBurgerTop: 2rem;
+    $menuBurgerLeft: 2rem;
+    $menuBurgerWidth: clamp(24px, 4vmin, 32px);
+    $menuBurgerHeight: 24px;
+    $menuBurgerBackWidth: 10rem;
+    $menuBurgerBK1: 550px;
+
+/*
+############################################################
+#####################  END SETTINGS  #######################
+############################################################
+*/
+
+
+
+
+/* HTML5 basis */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 html, body {
     overflow-x: hidden;
     font-family: $font-body;
@@ -43,7 +67,25 @@ html, body {
     color: $clr-body;
     font-size: 1rem;
 }
+header {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 100;
+}
+main {
+    position: relative;
+    display: block;
+    overflow-x: hidden;
+    width: 100vw;
+    min-height: 100vh;
+}
 
+
+
+/* page loader block */
 .loader {
     position: absolute;
     top: 0;
@@ -58,23 +100,9 @@ html, body {
     transition: all 500ms ease-in-out;
 }
 
-header {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    z-index: 100;
-}
 
-main {
-    position: relative;
-    display: block;
-    overflow-x: hidden;
-    width: 100vw;
-    min-height: 100vh;
-}
 
+/* page transition effects */
 .page {
     position: absolute;
     top: 0;
@@ -109,35 +137,9 @@ main {
     transform: scale(0);
 }
 
-.page-title {
-    $maxWidth: 300px;
 
-    position: absolute;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 0.5em;
-    align-items: center;
-
-    top: calc($menuBurgerTop + ($menuBurgerHeight / 2) + 1px);
-    left: calc($menuBurgerLeft + $menuBurgerWidth + $menuBurgerBackWidth + 2em);
-    transform: translateY(-50%);
-    color: $clr-active;
-    font-family: $font-title;
-    font-weight: bold;
-    font-size: clamp(1.25em, calc(1.25rem + ((1vw - 0.48em) * 2.0833)), 2.2em);
-    line-height: 1.5em;
-
-    @media screen and (max-width: $menuBurgerBK1) {
-        left: calc($menuBurgerLeft + $menuBurgerWidth + 1em);
-    }
-
-    svg {
-        margin-top: 0;
-    }
-}
-
+/* menu burger block */
 .menu-burger {
     $backgroundPadding: 0.5em;
     $backgroundMargin: 0px;
@@ -273,6 +275,9 @@ main {
     }
 }
 
+
+
+/* main menu */
 .menu {
     display: grid;
     place-items: center;
@@ -341,18 +346,28 @@ main {
     }
 }
 
+
+
+/* default page style */
+.container {
+    margin: 1em;
+    background: linear-gradient(to bottom, $clr-background, transparentize($clr-primary-100, 0.5));
+    border-radius: 10px;
+}
 h1 {
     font-family: $font-title;
     font-size: clamp(3.5em, 12vw, 9em);
     font-weight: bold;
 }
-
 h2 {
     font-family: $font-body;
     font-size: clamp(1.5em, 3vw, 5em);
     font-weight: 100;
 }
 
+
+
+/* big hero banner in homepage */
 .home {
     $margins: 1em;
 
@@ -364,7 +379,7 @@ h2 {
     height: calc(100vh - (2 * $margins));
     border-radius: 10px;
 
-    div {
+    .header {
         text-align: center;
         width: 100%;
         height: 100%;
@@ -385,14 +400,44 @@ h2 {
 
 
 
+/* common content layout */
+.contentLayout {
+    margin-top: 3rem;
 
+    /* page title on top beside menu burger */
+    .contentLayout-title {
+        $maxWidth: 300px;
 
-.container {
-    margin: 1em;
-    background: linear-gradient(to bottom, $clr-background, transparentize($clr-primary-100, 0.5));
-    border-radius: 10px;
+        position: absolute;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 0.5em;
+        align-items: center;
+
+        top: calc($menuBurgerTop + ($menuBurgerHeight / 2) + 1px);
+        left: calc($menuBurgerLeft + $menuBurgerWidth + $menuBurgerBackWidth + 2em);
+        transform: translateY(-50%);
+        color: $clr-active;
+        font-family: $font-title;
+        font-weight: bold;
+        font-size: clamp(1.25em, calc(1.25rem + ((1vw - 0.48em) * 2.0833)), 2.2em);
+        line-height: 1.5em;
+
+        @media screen and (max-width: $menuBurgerBK1) {
+            left: calc($menuBurgerLeft + $menuBurgerWidth + 1em);
+        }
+
+        svg {
+            margin-top: 0;
+        }
+    }
 }
 
+
+
+/* common content */
 .content {
     width: min(100%, 800px);
     margin: 0 auto;
@@ -400,7 +445,7 @@ h2 {
     font-size: clamp(0.9rem, 3vw, 1.2rem);
 
     img {
-        max-width: 100%;
+        width: 100%;
         height: auto;
         max-height: 300px;
         border-radius: 10px;
@@ -477,6 +522,10 @@ h2 {
         font-style: italic;
     }
 
+    small {
+        font-size: small;
+    }
+
     a {
         color: $clr-primary-300;
         font-weight: 100;
@@ -500,7 +549,8 @@ h2 {
         list-style-type: decimal-leading-zero;
         
     }
-    
+
+    /* page with title: 'Prestations et Tarifs' */
     .prestations {
         margin: 3rem auto;
 
@@ -511,7 +561,7 @@ h2 {
             margin: 2rem auto;
             background-color: $clr-background;
             border-radius: 10px;
-            box-shadow: 0 0 3px transparentize($clr-body, 0.9);
+            box-shadow: 0 0 3px transparentize($clr-body, 0.8);
 
             img {
                 max-height: 230px;
@@ -538,9 +588,9 @@ h2 {
                 position: absolute;
                 z-index: 99;
                 background-color: $clr-primary-200;
-                padding: 1em;
+                padding: 0.75em 1em;
                 border-radius: 10px;
-                filter: sepia(1);
+                filter: sepia(1) saturate(2);
                 transform: rotate(-10deg);
                 top: -10px;
                 left: -10px;
@@ -558,8 +608,9 @@ h2 {
                 overflow: hidden;
 
                 h4 {
-                    white-space: nowrap;
+                    white-space: pre-wrap;
                     text-overflow: ellipsis;
+                    font-size: clamp(1em, calc(1rem + ((1vw - 0.48em) * 2.0833)), 1.5em);
                 }
 
                 p {
@@ -570,6 +621,70 @@ h2 {
 
         }
     }
+
+    .contactForm {
+        margin-top: 3em;
+
+        .row {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1em;
+            margin-top: 1em;
+
+            input, textarea, button {
+                height: 64px;
+                border: 1px solid $clr-background;
+                background-color: $clr-background;
+                border-radius: 10px;
+                padding: 0.5em 1em;
+                box-shadow: 0 0 3px transparentize($clr-body, 0.8);
+                font-family: $font-body;
+                font-size: large;
+                transition: all 250ms ease-in-out;
+
+                &:disabled {
+                    background-color: transparentize($clr-body, 0.99);
+                    color: transparentize($clr-primary-200, 0.5);
+
+                    &::placeholder {
+                        color: inherit;
+                    }
+                }
+            }
+
+            textarea {
+                min-height: 20em;
+            }
+
+            button {
+                background-color: $clr-active;
+                color: $clr-background;
+                transition: all 250ms ease-in-out;
+
+                &:hover {
+                    border-color: $clr-primary-100;
+                }
+
+                &:disabled {
+                    background-color: transparentize($clr-body, 0.99);
+                    color: transparentize($clr-primary-200, 0.1);
+                }
+            }
+        }
+
+    }
+        
+
+
+
+    
+
+
+
+
+
+
 }
 
 

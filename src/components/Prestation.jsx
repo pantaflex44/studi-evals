@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Prestation({ content }) {
     return (
-        <div className="prestation">
+        <article className="prestation">
             <img
                 src={content.illustration?.url}
                 alt={content.illustration?.alt}
@@ -15,6 +15,6 @@ export default function Prestation({ content }) {
                 <h4>{content.denomination[0].text}</h4>
                 <p>{content.informations[0].text}</p>
             </div>
-        </div>
+        </article>
     );
 }

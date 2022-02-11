@@ -75,6 +75,39 @@ export default function Metas({ page }) {
                         }
                     />
                     <meta name="robots" content="all" />
+
+                    <script type="application/ld+json">
+                        {`{
+                            "@context": "http://schema.org/",
+                            "@type": "WebSite",
+                            url:
+                                "${
+                                    window.location.protocol +
+                                    "//" +
+                                    window.location.host
+                                }",
+                        }`}
+                    </script>
+
+                    <script type="application/ld+json">
+                        {`{
+                            "@context": "http://schema.org/",
+                            "@type": "Person",
+                            name: "${page.data.nom_de_l_auteur[0].text}",
+                            image: "${CharlesCantin}",
+                            url:
+                                "${
+                                    window.location.protocol +
+                                    "//" +
+                                    window.location.host
+                                }",
+                            jobTitle: "${page.data.description[0].text}",
+                            worksFor: {
+                                "@type": "Organization",
+                                name: "${page.data.nom_de_l_auteur[0].text}",
+                            },
+                        }`}
+                    </script>
                 </Helmet>
             )
         );
