@@ -29,6 +29,7 @@
     "@babel/core": "^7.16.10",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
+    "@emailjs/browser": "^3.4.0",
     "@parcel/babel-preset-env": "^2.2.1",
     "@parcel/transformer-sass": "^2.2.0",
     "@prismicio/client": "^6.1.1",

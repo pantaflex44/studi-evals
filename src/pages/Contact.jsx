@@ -1,16 +1,10 @@
-import React from "react";
-
-import { prismicContentToHtml } from "../js/primatic";
-import { sendMail } from "../js/email";
-
-import ContentLayout from "../components/ContentLayout";
+import React, { useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 
-const handleSendClick = (e) => {
-    e.preventDefault();
+import { prismicContentToHtml } from "../js/primatic";
 
-    sendMail(e.target);
-};
+import ContentLayout from "../components/ContentLayout";
+import ContactForm from "../components/ContactForm";
 
 export default function Contact({ page }) {
     return (
@@ -41,59 +35,7 @@ export default function Contact({ page }) {
                         }}
                     ></div>
                 </section>
-                <section className="contactForm">
-                    <div className="row">
-                        <input
-                            id="contactName"
-                            type="text"
-                            placeholder="Nom et Prénom"
-                            aria-label="Nom et Prénom"
-                            required
-                            autoComplete={"family-name"}
-                        />
-                        <input
-                            id="contactEmail"
-                            type="email"
-                            placeholder="Email"
-                            aria-label="Votre adresse email"
-                            required
-                            autoComplete={"email"}
-                        />
-                    </div>
-                    <div className="row">
-                        <input
-                            id="contactSubject"
-                            type="text"
-                            placeholder="Sujet"
-                            aria-label="Sujet du message"
-                            required
-                            autoComplete={"none"}
-                        />
-                    </div>
-                    <div className="row">
-                        <textarea
-                            id="contactMessage"
-                            rows="5"
-                            placeholder="Message"
-                            aria-label="Message"
-                            required
-                            autoComplete={"none"}
-                        ></textarea>
-                    </div>
-                    <div className="row">
-                        <button className="btn" onClick={handleSendClick}>
-                            envoyer le message
-                        </button>
-                    </div>
-                    <div className="row">
-                        <p>
-                            <small>
-                                Pour limiter les spams, le formualaire reste
-                                désactivé 60s après l'envoie du message.
-                            </small>
-                        </p>
-                    </div>
-                </section>
+                <ContactForm />
             </ContentLayout>
         )
     );

@@ -300,6 +300,10 @@ main {
         align-items: center;
 
         li {
+            &:not(:first-child) {
+                margin-top: 2vh;
+            }
+
             &:nth-last-child(1) {
                 margin-top: 2em;
 
@@ -624,6 +628,10 @@ h2 {
 
     .contactForm {
         margin-top: 3em;
+        
+        & * {
+            outline: none;   
+        }
 
         .row {
             width: 100%;
@@ -636,12 +644,31 @@ h2 {
                 height: 64px;
                 border: 1px solid $clr-background;
                 background-color: $clr-background;
+                color: $clr-body;
                 border-radius: 10px;
                 padding: 0.5em 1em;
                 box-shadow: 0 0 3px transparentize($clr-body, 0.8);
                 font-family: $font-body;
                 font-size: large;
                 transition: all 250ms ease-in-out;
+
+                &:-webkit-autofill, &:-webkit-autofill:focus {
+                    background-color: $clr-background;
+                    color: $clr-body;
+                    -webkit-text-fill-color: $clr-body;
+                    -webkit-box-shadow: 0 0 0px 1000px $clr-background inset,
+                    0 0 3px transparentize($clr-body, 0.8);
+                    transition: none;
+                    
+                }
+
+                &.valid {
+                    border-color: #00bb00;
+                }
+
+                &.invalid {
+                    border-color: #ff9999;
+                }
 
                 &:disabled {
                     background-color: transparentize($clr-body, 0.99);
@@ -650,6 +677,19 @@ h2 {
                     &::placeholder {
                         color: inherit;
                     }
+
+                    &:-webkit-autofill {
+                        background-color: transparentize($clr-body, 0.99);
+                        color: transparentize($clr-primary-200, 0.5);
+                    }
+                }
+
+                &:hover:not(:disabled):not(.valid):not(.invalid), &:active:not(:disabled):not(.valid):not(.invalid) {
+                    border-color: transparentize($clr-active, 0.6);
+                }
+
+                &:focus:not(:disabled):not(.valid):not(.invalid) {
+                    border-color: transparentize($clr-active, 0.1);
                 }
             }
 
@@ -661,15 +701,35 @@ h2 {
                 background-color: $clr-active;
                 color: $clr-background;
                 transition: all 250ms ease-in-out;
+                cursor: pointer;
 
-                &:hover {
-                    border-color: $clr-primary-100;
+                &:hover:not(:disabled) {
+                    border-color: $clr-active;
                 }
 
                 &:disabled {
                     background-color: transparentize($clr-body, 0.99);
                     color: transparentize($clr-primary-200, 0.1);
+                    cursor: default;
                 }
+            }
+
+            &.alert {
+                border: 1px solid #ff9999;
+                background-color: #ffeeee;
+                color: #ff3333;
+                padding: 1em;
+                border-radius: 10px;
+                font-size: smaller;
+            }
+
+            &.success {
+                border: 1px solid #00bb00;
+                background-color: #eeffee;
+                color: #00bb00;
+                padding: 1em;
+                border-radius: 10px;
+                font-size: smaller;
             }
         }
 
