@@ -191,16 +191,16 @@ export const prismicContentToHtml = (content) => {
         }
         prevType = block.type;
 
-        text = [...content];
+        let text = [...content];
         if (block.spans) {
             for (const span of block.spans) {
-                start = span.start;
-                end = span.end;
+                let start = span.start;
+                let end = span.end;
                 if (!text[span.end]) {
                     end--;
                 }
 
-                type = span.type;
+                let type = span.type;
 
                 switch (type) {
                     case "hyperlink":
