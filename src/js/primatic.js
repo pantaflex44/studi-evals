@@ -42,19 +42,38 @@ export const getPagesByType = async (type) => {
     return pages;
 };
 
+export const getPagesById = async (pid) => {
+    const endpoint = prismic.getEndpoint(PRISMIC_REPO);
+    const client = prismic.createClient(endpoint, { fetch });
+
+    const doc = await client.getByID(pid);
+    if (!doc) {
+        return [];
+    }
+
+    return {
+        id: doc.id,
+        lang: doc.lang,
+        data: doc.data,
+        href: doc.href,
+        published: doc.first_publication_date,
+        updated: doc.last_publication_date,
+    }
+};
+
 export const loadRoutes = async (docTypes) => {
     const endpoint = prismic.getEndpoint(PRISMIC_REPO);
     const client = prismic.createClient(endpoint, { fetch });
 
     const asyncGetPage = async (type) => {
         const doc = await client.getSingle(type.name);
+
         if (
             !doc ||
             !doc.data.titre_du_menu ||
             doc.data.titre_du_menu.length < 1 ||
             !doc.data.position ||
-            doc.data.position < 1 ||
-            !doc.data.icone_du_menu
+            doc.data.position < 1 
         ) {
             return null;
         }
@@ -64,7 +83,6 @@ export const loadRoutes = async (docTypes) => {
             type: type.name,
             position: doc.data.position,
             title: doc.data.titre_du_menu[0].text,
-            icon: doc.data.icone_du_menu.url,
             path: `/${
                 doc.data.chemin && doc.data.chemin.length > 0
                     ? doc.data.chemin[0].text
@@ -76,10 +94,17 @@ export const loadRoutes = async (docTypes) => {
     };
 
     const promises = [];
-    docTypes.forEach((type) => promises.push(asyncGetPage(type)));
+    docTypes.forEach((type) => {
+        const p = asyncGetPage(type);
+        if (p !== null) {
+            promises.push(p)
+        }
+    });
 
     const menu = await Promise.all(promises);
-    menu.sort((a, b) => a.position - b.position);
+    menu.sort((a, b) => {
+        return (a.position - b.position)
+    });
 
     localStorage.removeItem("prismicMenu");
     localStorage.setItem("prismicMenu", JSON.stringify(menu));

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
-import { render } from "react-dom";
+
+import { render, hydrate } from "react-dom";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
@@ -14,7 +15,7 @@ import Page from "./components/Page";
 import Layout from "./components/Layout";
 
 const Accueil = lazy(() => import("./pages/Accueil"));
-const Gallery = lazy(() => import("./pages/Gallery"));
+const Galerie = lazy(() => import("./pages/Galerie"));
 const Cgv = lazy(() => import("./pages/Cgv"));
 const MentionsLegales = lazy(() => import("./pages/MentionsLegales"));
 const Prestations = lazy(() => import("./pages/Prestations"));
@@ -88,7 +89,7 @@ export function App({ routes }) {
     );
 }
 
-export default function Loader({ prismicRoutes }) {
+export function Loader({ prismicRoutes }) {
     const [appState, setAppState] = useState(null);
 
     useEffect(() => {
@@ -111,16 +112,24 @@ export default function Loader({ prismicRoutes }) {
     );
 }
 
-render(
+const rootElement = document.getElementById("app");
+const loaderElement = (
     <Loader
         prismicRoutes={[
             { name: "page_daccueil", component: <Accueil /> },
             { name: "cgv", component: <Cgv /> },
             { name: "contact", component: <Contact /> },
-            { name: "gallerie_de_photos", component: <Gallery /> },
-            { name: "mentions_legales", component: <MentionsLegales /> },
+            { name: "gallerie_de_photos", component: <Galerie /> },
+            {
+                name: "mentions_legales",
+                component: <MentionsLegales />,
+            },
             { name: "tarifs_et_prestations", component: <Prestations /> },
         ]}
-    />,
-    document.getElementById("app")
+    />
 );
+if (rootElement.hasChildNodes()) {
+    hydrate(loaderElement, rootElement);
+} else {
+    render(loaderElement, rootElement);
+}

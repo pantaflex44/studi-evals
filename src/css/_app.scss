@@ -458,6 +458,143 @@ h2 {
         object-position: center;
     }
 
+    .categories {
+        border-bottom: 1px solid $clr-active;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1em;
+        justify-content: space-between;
+        align-items: center;
+        padding-block: 1em;
+
+        .selectContainer {
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%; 
+                margin-top: -3px;
+                right: .5em;  
+                display: block; 
+                width: 0; height: 0;
+                border-color: transparent;
+                border-top-color: #444; 
+                border-width: 6px;
+                border-style: solid;
+                pointer-events: none;
+            }
+
+            select {
+                width: 170px;
+                height: 32px;
+                border: none;
+                background-color: transparent;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                padding-left: 0.5em;
+                font-weight: bold;
+                font-size: larger;
+                color: $clr-primary-400;
+                border-left: 1px dotted $clr-primary-200;
+                cursor: pointer;
+                outline: none;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 50%; 
+                    margin-top: -3px;
+                    right: 0;  
+                    display: block; 
+                    width: 0; height: 0;
+                    border-color: transparent;
+                    border-top-color: $clr-primary-400; 
+                    border-width: 6px;
+                    border-style: solid;
+                    pointer-events: none;
+                }
+
+                option {
+                    font-family: $font-body;
+                }
+            }
+        }
+    }
+
+    .album {
+        margin-top: 5em;
+        margin-bottom: 8em;
+        display: block;
+
+        h4 {
+            text-align: center;
+            font-family: $font-title;
+            font-size: clamp(2.5em, calc(2.5rem + ((1vw - 0.48em) * 2.7778)), 4em);
+            line-height: 0.8em;
+
+            small {
+                font-family: $font-body;
+                color: $clr-primary-200;
+            }
+        }
+    }
+
+    .photo {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        margin-block: 2em;
+
+        figure {
+            background-color: $clr-background;
+            box-shadow: 1px 1px 5px transparentize($clr-body, 0.5);
+            padding: 1em;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            transition: all 100ms;
+
+            @for $i from 1 through 32 {
+                &:nth-child(#{$i}) {
+                    $r: random(30) - 15;
+                    transform: rotate($r + deg);
+                }
+            }
+
+            &:hover {
+                z-index: 1000;
+                transform: rotate(0) scale(1.2);
+                box-shadow: 0 0 20px transparentize($clr-body, 0.5);
+
+                img {
+                    filter: grayscale(0);
+                }
+            }
+
+            img {
+                position: relative;
+                all: initial;
+                object-fit: cover;
+                object-position: center;
+                width: 100%;
+                transition: all 100ms;
+                filter: grayscale(1);
+            }
+
+            figcaption {
+                margin: 0;
+                padding: 0;
+                margin-top: 1em;
+                font-family: $font-title;
+            }
+        }
+    }
+
     h1 {
         font-family: $font-body;
         font-size: clamp(3em, calc(3rem + ((1vw - 0.48em) * 2.7778)), 5em);
@@ -487,7 +624,7 @@ h2 {
 
     h4 {
         font-family: $font-body;
-        font-size: clamp(1em, calc(1rem + ((1vw - 0.48em) * 2.0833)), 2em);
+        font-size: clamp(1.2em, calc(1.2rem + ((1vw - 0.48em) * 2.0833)), 2em);
         font-weight: 900;
         margin: 0.5em 0;
         margin-top: 1em;
@@ -575,7 +712,7 @@ h2 {
                 align-items: center;
                 justify-content: center;
                 filter: grayscale(1);
-                transition: filter 250ms ease-in-out;
+                transition: filter 100ms ease-in-out;
             }
 
             &:hover {
