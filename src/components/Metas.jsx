@@ -76,6 +76,14 @@ export default function Metas({ page }) {
                     />
                     <meta name="robots" content="all" />
 
+                    {page.data.image_de_fond && (
+                        <link
+                            rel="preload"
+                            as="image"
+                            href={page.data.image_de_fond.url}
+                        />
+                    )}
+
                     <script type="application/ld+json">
                         {`{
                             "@context": "http://schema.org/",

@@ -375,15 +375,26 @@ h2 {
 .home {
     $margins: 1em;
 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    position: relative;
     margin: $margins;
     width: calc(100vw - (2* $margins));
     height: calc(100vh - (2 * $margins));
     border-radius: 10px;
 
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(100% - ($margins / 2));
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px;
+        z-index: 98;
+    }
+
     .header {
+        position: absolute;
         text-align: center;
         width: 100%;
         height: 100%;
@@ -393,7 +404,9 @@ h2 {
         align-items: center;
         border-radius: 10px;
         overflow: hidden;
-        text-shadow: 0 0 5px transparentize($clr-body, 0.5);
+        text-shadow: 0 0 5px $clr-body;
+        z-index: 99;
+        margin-left: -0.5em;
 
         h1, h2 {
             color: $clr-background;

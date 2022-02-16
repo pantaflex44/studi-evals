@@ -7,7 +7,7 @@ import ContentLayout from "../components/ContentLayout";
 export default function Galerie({ page }) {
     const [albums, setAlbums] = useState([]);
     const [albumsSelection, setAlbumsSelection] = useState([]);
-    const minMappedPhotosCount = 4;
+    const minMappedPhotosCount = process.env.MIN_MAPPED_PHOTOS_COUNT;
 
     useEffect(() => {
         page.data.albums_photos.map((item) => {
