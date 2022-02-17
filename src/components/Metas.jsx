@@ -1,8 +1,8 @@
 import React, { useContext, useMemo } from "react";
 import { Helmet } from "react-helmet-async";
 
-import CharlesCantin from "../../assets/charles-cantin.jpg";
-import FaviconPng from "../../assets/favicon-32x32.png";
+import CharlesCantin from "../assets/charles-cantin.jpg";
+import FaviconPng from "../assets/favicon-32x32.png";
 
 export default function Metas({ page }) {
     return useMemo(() => {
