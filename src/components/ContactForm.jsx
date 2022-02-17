@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import emailjs, { init } from "@emailjs/browser";
+import Reaptcha from "reaptcha";
 
 export default function ContactForm() {
     const sanitize = (text) => {
@@ -21,6 +22,7 @@ export default function ContactForm() {
     const [isSuccess, setIsSuccess] = useState(false);
     const [sending, setSending] = useState(false);
     const [sended, setSended] = useState(false);
+    const [captchaVerified, setCaptchaVerified] = useState(false);
 
     const submitButton = useRef();
     const nameField = useRef();
@@ -80,13 +82,18 @@ export default function ContactForm() {
         });
     };
 
+    const handleCaptchaVerify = () => {
+        setCaptchaVerified(true);
+    };
+
     useEffect(() => {
         submitButton.current.disabled =
             !name.isValid ||
             !email.isValid ||
             !subject.isValid ||
-            !message.isValid;
-    }, [name, email, subject, message]);
+            !message.isValid ||
+            !captchaVerified;
+    }, [name, email, subject, message, captchaVerified]);
 
     useEffect(() => {
         nameField.current.focus();
@@ -107,7 +114,8 @@ export default function ContactForm() {
             !name.isValid ||
             !email.isValid ||
             !subject.isValid ||
-            !message.isValid
+            !message.isValid ||
+            !captchaVerified
         ) {
             setIsAlert(true);
             return;
@@ -149,6 +157,7 @@ export default function ContactForm() {
             setEmail({ ...defaultFieldState });
             setSubject({ ...defaultFieldState });
             setMessage({ ...defaultFieldState });
+            setCaptchaVerified(false);
 
             setSending(false);
             setSended(false);
@@ -241,6 +250,12 @@ export default function ContactForm() {
                             message.isValid ? "valid" : "",
                             message.isInvalid ? "invalid" : "",
                         ].join(" ")}
+                    />
+                </div>
+                <div className="row">
+                    <Reaptcha
+                        sitekey={process.env.RECAPTCHA_API_KEY}
+                        onVerify={handleCaptchaVerify}
                     />
                 </div>
                 <div className="row">

@@ -6,7 +6,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import "./css/_app.scss";
-import "./js/functions";
+import { removeCommonMetas } from "./js/functions";
 
 import { loadRoutes } from "./js/primatic";
 
@@ -94,6 +94,7 @@ export function Loader({ prismicRoutes }) {
 
     useEffect(() => {
         loadRoutes(prismicRoutes).then((routes) => {
+            removeCommonMetas();
             setAppState(<App routes={routes} />);
         });
     }, []);

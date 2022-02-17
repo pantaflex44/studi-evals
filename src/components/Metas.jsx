@@ -3,7 +3,6 @@ import { Helmet } from "react-helmet-async";
 
 import CharlesCantin from "../../assets/charles-cantin.jpg";
 import FaviconPng from "../../assets/favicon-32x32.png";
-import Favicon from "../../assets/favicon.ico";
 
 export default function Metas({ page }) {
     return useMemo(() => {
@@ -59,11 +58,7 @@ export default function Metas({ page }) {
                         content={`${page.data.titre_de_la_page[0].text} - ${page.data.slogan[0].text}`}
                     />
                     <link rel="icon" type="image/png" href={FaviconPng}></link>
-                    <link
-                        rel="shortcut icon"
-                        href={Favicon}
-                        type="image/x-icon"
-                    ></link>
+
                     <link
                         rel="canonical"
                         href={
@@ -87,7 +82,6 @@ export default function Metas({ page }) {
                             rel="preload"
                             as="image"
                             href={page.data.image_de_fond.url}
-                            crossorigin="anonymous"
                         />
                     )}
 

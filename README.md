@@ -93,8 +93,8 @@ Pour utiliser le projet en local, il est nécessaire de commencer par son télé
 
 ```bash
 mkdir LeProjet
-git clone https://github.com/pantaflex44/studi-evals.git .
 cd LeProjet
+git clone https://github.com/pantaflex44/studi-evals.git .
 ```
 
 ### Premiers pas
