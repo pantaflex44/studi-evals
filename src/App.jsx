@@ -4,13 +4,13 @@ import { render, hydrate } from "react-dom";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { SpinnerRoundFilled } from "spinners-react";
 
 import "./css/_app.scss";
 import { removeCommonMetas } from "./js/functions";
 
 import { loadRoutes } from "./js/primatic";
 
-import { SpinnerRoundFilled } from "spinners-react";
 import Page from "./components/Page";
 import Layout from "./components/Layout";
 
