@@ -2,7 +2,10 @@
 
 
 
+![](./src/assets/favicon-32x32.png)
+
 Projet de l'évaluation  ECF Front: Charles Cantin<br />
+
 <br />
 Charles Cantin, une personne de votre entourage, est passionné par la photographie.<br />
 Même s’il pratique en amateur, son talent est reconnu et beaucoup font appel à lui pour immortaliser
@@ -60,6 +63,8 @@ réels.
 **URL du projet Back**: https://charlescantin.prismic.io/documents/working?l=fr-fr<br />
 
 Tous les documents annexes sont disponibles dans le dossier **projet** à la racine de l'application.
+
+![](./src/assets/charles-cantin.jpg)
 
 ## Compétences du référentiel couvertes par le projet
 
